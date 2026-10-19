@@ -1,15 +1,15 @@
 /**
- * Coral Coffee Space — Menu & Catalog Interactions
+ * Coral Coffee Space — Menu & Interaction Script
  * Features:
- * 1. Image Shake / Jiggle on item tap & scroll entrance
- * 2. Smooth Scroll Fade-In & Fade-Out for Catalog Cards
+ * 1. Image Shake / Jiggle on cutout tap & scroll entrance
+ * 2. Scroll-Driven Fade-In & Fade-Out for Cutout Images
  * 3. Synthetic Audio Feedback (Web Audio API)
- * 4. Floating Crave Counter & Reaction Burst
- * 5. Sticky Category Nav Sync
+ * 4. Sticky Category Nav Sync
+ * 5. Floating Crave Counter & Reaction Burst
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initItemThumbnailShake();
+  initProductImageShake();
   initScrollFadeEffects();
   initCategoryNavSync();
   initCraveMeter();
@@ -17,24 +17,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * 1. Small Cutout Thumbnail Shake on Tap / Click
+ * 1. Product Cutout Image Shake on Tap / Click
  */
-function initItemThumbnailShake() {
-  const itemRows = document.querySelectorAll('.menu-item-row');
+function initProductImageShake() {
+  const visualBoxes = document.querySelectorAll('.visual-interactive-box');
 
-  itemRows.forEach(row => {
-    const thumb = row.querySelector('.thumb-cutout');
+  visualBoxes.forEach(box => {
+    const img = box.querySelector('.product-cutout-img');
 
-    row.addEventListener('click', () => {
-      if (thumb) {
-        triggerDeliciousShake(thumb);
+    box.addEventListener('click', () => {
+      if (img) {
+        triggerDeliciousShake(img);
       }
       playBubblePopSound();
     });
 
-    row.addEventListener('touchstart', () => {
-      if (thumb) {
-        triggerDeliciousShake(thumb);
+    box.addEventListener('touchstart', () => {
+      if (img) {
+        triggerDeliciousShake(img);
       }
       playBubblePopSound();
     }, { passive: true });
@@ -53,86 +53,84 @@ function triggerDeliciousShake(img) {
 }
 
 /**
- * 2. Scroll-Driven Fade-In & Fade-Out for Catalog Cards
+ * 2. Scroll-Driven Fade-In & Fade-Out for Cutout Images
  */
 function initScrollFadeEffects() {
-  const cards = document.querySelectorAll('.scroll-fade-section');
-  if (!cards.length) return;
+  const fadeElements = document.querySelectorAll('.scroll-fade-elem');
+  if (!fadeElements.length) return;
 
   const observerOptions = {
     root: null,
     rootMargin: '-5% 0px -10% 0px',
-    threshold: [0, 0.15, 0.5, 0.9]
+    threshold: [0, 0.2, 0.6, 1.0]
   };
 
   const hasEnteredOnce = new WeakSet();
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      const card = entry.target;
-      const rect = card.getBoundingClientRect();
+      const el = entry.target;
+      const rect = el.getBoundingClientRect();
       const vh = window.innerHeight;
 
       if (entry.isIntersecting) {
-        card.classList.add('is-visible');
-        card.classList.remove('is-scrolled-past');
+        el.classList.add('is-visible');
+        el.classList.remove('is-scrolled-past');
 
-        // Playful subtle shake on first featured thumbnail in this card
-        if (!hasEnteredOnce.has(card)) {
-          hasEnteredOnce.add(card);
-          const firstThumb = card.querySelector('.thumb-cutout');
-          if (firstThumb) {
+        // Playful subtle shake on first entrance
+        if (!hasEnteredOnce.has(el)) {
+          hasEnteredOnce.add(el);
+          const img = el.querySelector('.product-cutout-img');
+          if (img) {
             setTimeout(() => {
-              triggerDeliciousShake(firstThumb);
+              triggerDeliciousShake(img);
             }, 300);
           }
         }
       } else {
         if (rect.bottom < 85) {
-          // Passed top viewport -> softly dim
-          card.classList.remove('is-visible');
-          card.classList.add('is-scrolled-past');
+          el.classList.remove('is-visible');
+          el.classList.add('is-scrolled-past');
         } else if (rect.top > vh - 40) {
-          // Below viewport -> prepare to rise
-          card.classList.remove('is-visible');
-          card.classList.remove('is-scrolled-past');
+          el.classList.remove('is-visible');
+          el.classList.remove('is-scrolled-past');
         }
       }
     });
   }, observerOptions);
 
-  cards.forEach(card => observer.observe(card));
+  fadeElements.forEach(elem => observer.observe(elem));
 
   // 60fps Scroll position update
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        updateCardScrollState(cards);
+        updateScrollState(fadeElements);
         ticking = false;
       });
       ticking = true;
     }
   }, { passive: true });
 
-  updateCardScrollState(cards);
+  updateScrollState(fadeElements);
 }
 
-function updateCardScrollState(cards) {
+function updateScrollState(elements) {
   const vh = window.innerHeight;
   const topThreshold = 85;
 
-  cards.forEach(card => {
-    const rect = card.getBoundingClientRect();
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
     if (rect.top < topThreshold && rect.bottom < topThreshold + 40) {
-      card.classList.remove('is-visible');
-      card.classList.add('is-scrolled-past');
+      el.classList.remove('is-visible');
+      el.classList.add('is-scrolled-past');
     } else if (rect.top < vh - 40 && rect.bottom > topThreshold) {
-      card.classList.add('is-visible');
-      card.classList.remove('is-scrolled-past');
+      el.classList.add('is-visible');
+      el.classList.remove('is-scrolled-past');
     } else if (rect.top >= vh - 40) {
-      card.classList.remove('is-visible');
-      card.classList.remove('is-scrolled-past');
+      el.classList.remove('is-visible');
+      el.classList.remove('is-scrolled-past');
     }
   });
 }
@@ -197,7 +195,7 @@ function initCategoryNavSync() {
 
       if (targetSec) {
         const navHeight = document.getElementById('categoryNav').offsetHeight || 55;
-        const targetTop = targetSec.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
+        const targetTop = targetSec.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
 
         window.scrollTo({
           top: targetTop,

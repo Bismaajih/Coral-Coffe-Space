@@ -1,9 +1,8 @@
 /* =========================================================
    Coral Coffee Space — Menu Digital (Editorial Clean Canvas)
    Theme: Soft Warm Canvas (#FAF8F5) with Ocean Navy (#143054) & Coral Pink (#E44B66)
-   - Layout: Editorial Bersih (Tanpa Box Card Kaku)
-   - Atmospheric Banners: Foto Real Besar dengan Dark Dim Overlay
-   - Thumbnails: Cut-out PNG Kecil Tipis di Samping Menu
+   - Layout Sesuai Desain Awal: 2-Kolom Bergantian (Gambar di Samping, Teks di Samping)
+   - Background Overlay: Foto Non-Remove-BG di Bagian Bawah dengan Gradien Transparan
    ========================================================= */
 
 :root {
@@ -67,76 +66,42 @@ body {
 }
 
 /* =========================================================
-   Atmospheric Photo Banners (Hero & Mid-Page Overlay)
-   Persis seperti referensi user: foto besar dengan dark overlay sinematik
+   Cafe Header (Warm & Friendly Hero)
    ========================================================= */
-.ambient-photo-banner {
-  position: relative;
-  background-image: var(--ambient-bg);
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  color: #FFFFFF;
+.cafe-header {
+  padding: 24px 20px 20px 20px;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--canvas-bg) 100%);
+  border-bottom: 1px solid var(--border-subtle);
   text-align: center;
 }
 
-.hero-overlay {
-  padding: 24px 20px 24px 20px;
-}
-
-.mid-overlay-banner {
-  margin: 28px 0 16px 0;
-  padding: 38px 20px;
-  border-radius: 14px;
-}
-
-/* Dark Dim Overlay (Vignette) */
-.banner-dim-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, 
-    rgba(12, 28, 48, 0.72) 0%, 
-    rgba(16, 36, 62, 0.86) 65%, 
-    rgba(12, 28, 48, 0.94) 100%);
-  backdrop-filter: blur(1.5px);
-  -webkit-backdrop-filter: blur(1.5px);
-  z-index: 1;
-}
-
-.banner-inner {
-  position: relative;
-  z-index: 2;
-}
-
-/* Banner Top Bar */
-.banner-top-bar {
+.header-top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
 }
 
-.status-pill {
+.status-chip {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(8px);
+  background: var(--coral-soft);
+  border: 1px solid var(--coral-border);
   padding: 5px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .pulsing-green-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #48E59B;
-  box-shadow: 0 0 8px #48E59B;
-  animation: pulseGreen 1.8s infinite;
+  background-color: var(--coral-hot);
+  box-shadow: 0 0 8px var(--coral-hot);
+  animation: pulseDot 1.8s infinite;
 }
 
-@keyframes pulseGreen {
+@keyframes pulseDot {
   0% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.4); opacity: 0.6; }
   100% { transform: scale(1); opacity: 1; }
@@ -145,6 +110,7 @@ body {
 .status-text {
   font-size: 0.72rem;
   font-weight: 600;
+  color: var(--coral-hot);
   letter-spacing: 0.02em;
 }
 
@@ -160,6 +126,7 @@ body {
   padding: 5px 12px;
   border-radius: 999px;
   box-shadow: 0 4px 12px rgba(228, 75, 102, 0.35);
+  transition: transform 0.2s ease;
 }
 
 .instagram-link:active {
@@ -177,7 +144,7 @@ body {
   height: 62px;
   margin: 0 auto 8px auto;
   cursor: pointer;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 6px 14px rgba(20, 48, 84, 0.15));
   animation: mascotWiggle 3.5s infinite ease-in-out;
 }
 
@@ -198,28 +165,19 @@ body {
   font-size: 1.65rem;
   font-weight: 900;
   letter-spacing: 0.04em;
-  color: #FFFFFF;
+  color: var(--navy-deep);
   line-height: 1.15;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
-}
-
-.brand-quote {
-  font-family: 'Georgia', serif;
-  font-size: 0.88rem;
-  font-style: italic;
-  color: #F8EDD8;
-  margin-top: 6px;
-  line-height: 1.35;
 }
 
 .brand-tagline {
-  font-size: 0.74rem;
-  color: #BED3EA;
+  font-size: 0.80rem;
+  color: var(--navy-muted);
+  font-style: italic;
   margin-top: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
-/* Facility Chips */
+/* Facility Row */
 .facility-row {
   display: flex;
   justify-content: center;
@@ -232,18 +190,18 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 0.68rem;
+  font-size: 0.70rem;
   font-weight: 500;
-  color: #DDE8F7;
-  background: rgba(255, 255, 255, 0.12);
+  color: var(--navy-muted);
+  background: #FFFFFF;
   padding: 4px 10px;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--border-subtle);
 }
 
 .facility-chip svg {
-  width: 11px;
-  height: 11px;
+  width: 12px;
+  height: 12px;
   color: var(--coral-accent);
 }
 
@@ -255,37 +213,14 @@ body {
   font-weight: 600;
   color: var(--navy-deep);
   background: #FFFFFF;
-  padding: 5px 12px;
+  padding: 5px 14px;
   border-radius: 999px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(16, 36, 62, 0.06);
+  border: 1px solid var(--coral-border);
 }
 
 .hint-sparkle {
   color: var(--coral-hot);
-}
-
-/* Mid Banner Quote Styles */
-.banner-tag {
-  font-size: 0.66rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--coral-accent);
-  display: block;
-  margin-bottom: 4px;
-}
-
-.banner-quote-title {
-  font-family: 'Georgia', serif;
-  font-size: 1.15rem;
-  font-style: italic;
-  color: #FFFFFF;
-  line-height: 1.3;
-  margin-bottom: 6px;
-}
-
-.banner-quote-sub {
-  font-size: 0.74rem;
-  color: #C8D8EA;
 }
 
 /* =========================================================
@@ -339,44 +274,197 @@ body {
 }
 
 /* =========================================================
-   Editorial Menu Canvas (Clean, Open, NO Card Box Frames)
+   Editorial Menu Sections
+   - Layout Sesuai Desain Awal: 2-Kolom (Visual di Samping, Teks di Samping)
+   - Background Overlay: Foto Non-Remove-BG di Bawah dengan Gradien Transparan
    ========================================================= */
-.editorial-canvas {
-  padding: 20px 18px 24px 18px;
+.editorial-main-flow {
   display: flex;
   flex-direction: column;
-  gap: 32px;
 }
 
 .editorial-section {
-  padding-top: 6px;
+  position: relative;
+  padding: 28px 16px 32px 16px;
+  border-bottom: 1px solid rgba(20, 48, 84, 0.08);
 }
 
-.section-heading-box {
+/* Overlay Background di Bagian Paling Bawah dengan Gradien Transparan */
+.ambient-bottom-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background-image: var(--bg-ambient);
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 0.24;
+  pointer-events: none;
+  z-index: 0;
+  /* Gradien transparan ke atas: dari bawah jelas, memudar halus ke atas hingga 100% transparan */
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.3) 55%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.3) 55%, rgba(0, 0, 0, 0) 100%);
+  filter: saturate(1.15) contrast(1.02);
+  transition: opacity 0.3s ease;
+}
+
+/* 2-Column Row (Sesuai Desain Awal) */
+.editorial-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.layout-img-left {
+  flex-direction: row;
+}
+
+.layout-img-right {
+  flex-direction: row;
+}
+
+/* Product Visual Column (Gambar Remove-BG Berdiri di Samping) */
+.product-visual-col {
+  flex: 0 0 35%;
+  max-width: 35%;
+  position: sticky;
+  top: 72px;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.visual-interactive-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.product-cutout-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1.15;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 18px rgba(16, 36, 62, 0.14));
+  transition: filter 0.3s ease;
+  animation: ambientFloat 4.5s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes ambientFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+/* Shake Animation on Tap ("Sedikit Dishake") */
+.product-cutout-img:hover {
+  filter: drop-shadow(0 18px 22px rgba(228, 75, 102, 0.3));
+}
+
+.product-cutout-img:active,
+.product-cutout-img.is-shaking {
+  animation: deliciousShake 0.65s cubic-bezier(0.36, 0.07, 0.19, 0.97) both !important;
+}
+
+@keyframes deliciousShake {
+  0% { transform: scale(1) rotate(0deg); }
+  15% { transform: scale(1.08) rotate(-5deg); }
+  30% { transform: scale(1.06) rotate(4deg); }
+  45% { transform: scale(1.04) rotate(-3deg); }
+  60% { transform: scale(1.02) rotate(2deg); }
+  75% { transform: scale(1.01) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.tap-hint-pill {
+  margin-top: 6px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--coral-hot);
+  background: var(--coral-soft);
+  border: 1px solid var(--coral-border);
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.visual-interactive-box:hover .tap-hint-pill,
+.visual-interactive-box:active .tap-hint-pill {
+  opacity: 1;
+  transform: scale(1.05);
+  background: var(--coral-hot);
+  color: #FFFFFF;
+}
+
+/* Scroll-Driven Appearance on Visual Column */
+.scroll-fade-elem {
+  opacity: 0;
+  transform: translateY(28px) scale(0.94);
+  filter: blur(3px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.scroll-fade-elem.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0px);
+}
+
+.scroll-fade-elem.is-scrolled-past {
+  opacity: 0.25;
+  transform: translateY(-22px) scale(0.96);
+  filter: blur(2px);
+}
+
+/* Product Text Column */
+.product-text-col {
+  flex: 1 1 65%;
+  min-width: 0;
+  position: relative;
+  z-index: 3;
+}
+
+.section-title-wrap {
   margin-bottom: 4px;
 }
 
 .editorial-title {
   font-family: var(--font-display);
-  font-size: 1.22rem;
+  font-size: 1.20rem;
   font-weight: 900;
   letter-spacing: 0.04em;
   color: var(--navy-deep);
   line-height: 1.2;
 }
 
-.title-underline {
+.editorial-underline {
   width: 100%;
   height: 2.5px;
   border-radius: 2px;
   margin-top: 4px;
 }
 
-.underline-blue {
+.line-blue {
   background: linear-gradient(90deg, var(--navy-main) 0%, rgba(20, 48, 84, 0.15) 100%);
 }
 
-.underline-pink {
+.line-pink {
   background: linear-gradient(90deg, var(--coral-hot) 0%, rgba(228, 75, 102, 0.15) 100%);
 }
 
@@ -388,80 +476,38 @@ body {
   margin-bottom: 12px;
 }
 
-/* Tabular Menu Rows */
-.editorial-table {
+/* Tabular Menu Items Table */
+.menu-items-table {
   display: flex;
   flex-direction: column;
 }
 
-.menu-item-row {
+.menu-line {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 7px 4px;
+  padding: 6px 4px;
   border-bottom: 1px dashed rgba(16, 36, 62, 0.09);
   transition: background 0.15s ease;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
-.menu-item-row:last-child {
+.menu-line:last-child {
   border-bottom: none;
 }
 
-.menu-item-row:hover,
-.menu-item-row:active {
-  background: rgba(228, 75, 102, 0.04);
+.menu-line:hover,
+.menu-line:active {
+  background: rgba(228, 75, 102, 0.05);
 }
 
-.item-left {
+.line-info {
   flex: 1;
   min-width: 0;
   padding-right: 8px;
 }
 
-/* Small Delicate Cutout Thumbnail (38px) right beside menu item */
-.name-with-thumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.thumb-mini-box {
-  flex: 0 0 38px;
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  user-select: none;
-}
-
-.thumb-cutout {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 8px rgba(16, 36, 62, 0.16));
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Shake Animation on tap */
-.thumb-cutout:hover,
-.thumb-cutout:active,
-.thumb-cutout.is-shaking {
-  animation: deliciousMicroShake 0.65s cubic-bezier(0.36, 0.07, 0.19, 0.97) both !important;
-}
-
-@keyframes deliciousMicroShake {
-  0% { transform: scale(1) rotate(0deg); }
-  20% { transform: scale(1.22) rotate(-8deg); filter: drop-shadow(0 6px 12px rgba(228, 75, 102, 0.35)); }
-  40% { transform: scale(1.18) rotate(7deg); }
-  60% { transform: scale(1.10) rotate(-4deg); }
-  80% { transform: scale(1.05) rotate(2deg); }
-  100% { transform: scale(1) rotate(0deg); }
-}
-
-.name-badge-group {
+.name-badge-flex {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -473,32 +519,22 @@ body {
   font-weight: 700;
   color: var(--navy-deep);
   line-height: 1.25;
+  text-shadow: 0 1px 1px rgba(250, 248, 245, 0.95);
 }
 
-.variant-tag {
+.tag-variant {
   font-size: 0.70rem;
   font-weight: 500;
   color: var(--navy-muted);
 }
 
-.item-note {
+.item-desc {
   display: block;
   font-size: 0.72rem;
   color: var(--navy-muted);
   line-height: 1.3;
   margin-top: 2px;
-}
-
-.pl-thumb {
-  padding-left: 46px; /* Align with text when thumbnail is present */
-}
-
-/* Tabular Prices */
-.item-right {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  padding-left: 8px;
+  text-shadow: 0 1px 1px rgba(250, 248, 245, 0.9);
 }
 
 .item-price {
@@ -507,6 +543,8 @@ body {
   font-weight: 800;
   color: var(--navy-deep);
   letter-spacing: -0.02em;
+  white-space: nowrap;
+  text-shadow: 0 1px 1px rgba(250, 248, 245, 0.95);
 }
 
 .text-pink {
@@ -518,7 +556,7 @@ body {
 }
 
 /* Badges */
-.badge-pill {
+.badge-tag {
   font-size: 0.58rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -527,19 +565,19 @@ body {
   text-transform: uppercase;
 }
 
-.pill-pink {
+.pink-tag {
   background-color: var(--coral-soft);
   color: var(--coral-hot);
   border: 1px solid var(--coral-border);
 }
 
-.pill-blue {
+.blue-tag {
   background-color: rgba(20, 48, 84, 0.08);
   color: var(--navy-main);
   border: 1px solid rgba(20, 48, 84, 0.18);
 }
 
-/* Additional Chip Box */
+/* Additional Box */
 .additional-box {
   margin-top: 14px;
   background: #FFFFFF;
@@ -698,13 +736,8 @@ body {
   .editorial-title {
     font-size: 1.10rem;
   }
-  .thumb-mini-box {
-    flex: 0 0 34px;
-    width: 34px;
-    height: 34px;
-  }
-  .pl-thumb {
-    padding-left: 42px;
+  .product-visual-col {
+    flex: 0 0 35%;
   }
   .item-name {
     font-size: 0.82rem;

@@ -6,20 +6,53 @@
    ========================================================= */
 
 :root {
-  /* Colors */
-  --navy-deep: #10243E;
-  --navy-main: #143054;
-  --navy-muted: #536E8B;
-  --navy-soft: #D9E4EF;
+  /* =========================================================
+     CORAL COFFEE SPACE — BRAND COLOR SYSTEM (MATCHED TO OFFICIAL LOGO)
+     Primary Colors:
+     - Electric Ocean Blue: #126CFC (from logo background & 'O' in CORAL)
+     - Coral Bubblegum Pink: #FC66A2 (from logo mascot character & 'C,R,A,L' in CORAL)
+     - Mini Mascot Cyan: #2A8ACC (from center mini-mascot)
+     - Deep Comic Ink Navy: #0E1A2D (from comic outlines & 'coffee space' subtitle)
+     ========================================================= */
 
-  --coral-hot: #E44B66;
-  --coral-accent: #F97087;
-  --coral-soft: #FDECEF;
-  --coral-border: #F7CAD2;
+  /* Electric Ocean Blue Palette */
+  --coral-electric-blue: #126CFC;
+  --coral-electric-hover: #0B5CD6;
+  --coral-blue-soft: #EEF4FF;
+  --coral-blue-border: #C8DCFC;
+  --coral-blue-deep: #0B4DC2;
 
-  --canvas-bg: #FAF8F5;
+  /* Coral Bubblegum Pink Palette */
+  --coral-bubble-pink: #FC66A2;
+  --coral-pink-hover: #E84D8C;
+  --coral-pink-soft: #FDF0F6;
+  --coral-pink-border: #F8BBD8;
+  --coral-pink-deep: #D63678;
+
+  /* Mini Mascot Accent */
+  --coral-sky-accent: #2A8ACC;
+
+  /* Clean Milk-Canvas Neutrals */
+  --canvas-bg: #F8FAFD;
   --canvas-pure: #FFFFFF;
-  --border-subtle: #EBE4DD;
+  --border-subtle: #E2E8F2;
+  --border-dashed: rgba(18, 108, 252, 0.12);
+
+  /* High Legibility Ink Typography */
+  --text-main: #0E1A2D;
+  --text-muted: #4B6180;
+  --text-light: #7E94B0;
+
+  /* Backward Compatible Token Mapping */
+  --navy-deep: var(--text-main);
+  --navy-main: var(--coral-electric-blue);
+  --navy-muted: var(--text-muted);
+  --navy-soft: var(--coral-blue-soft);
+
+  --coral-hot: var(--coral-bubble-pink);
+  --coral-accent: #FF7FB2;
+  --coral-soft: var(--coral-pink-soft);
+  --coral-border: var(--coral-pink-border);
 
   /* Typography */
   --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -40,12 +73,12 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: #E6E1DC;
+  background-color: #E2EAF6;
 }
 
 body {
   font-family: var(--font-body);
-  color: var(--navy-deep);
+  color: var(--text-main);
   background-color: var(--canvas-bg);
   line-height: 1.5;
   overflow-x: hidden;
@@ -58,7 +91,7 @@ body {
   margin: 0 auto;
   min-height: 100vh;
   background-color: var(--canvas-bg);
-  box-shadow: 0 0 50px rgba(16, 36, 62, 0.12);
+  box-shadow: 0 0 50px rgba(18, 108, 252, 0.14);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -66,11 +99,11 @@ body {
 }
 
 /* =========================================================
-   Cafe Header (Warm & Friendly Hero)
+   Cafe Header (Vibrant Brand Hero)
    ========================================================= */
 .cafe-header {
   padding: 24px 20px 20px 20px;
-  background: linear-gradient(180deg, #FFFFFF 0%, var(--canvas-bg) 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F9FE 100%);
   border-bottom: 1px solid var(--border-subtle);
   text-align: center;
 }
@@ -86,8 +119,8 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: var(--coral-soft);
-  border: 1px solid var(--coral-border);
+  background: var(--coral-blue-soft);
+  border: 1px solid var(--coral-blue-border);
   padding: 5px 12px;
   border-radius: 999px;
 }
@@ -96,8 +129,8 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: var(--coral-hot);
-  box-shadow: 0 0 8px var(--coral-hot);
+  background-color: #10B981;
+  box-shadow: 0 0 8px #10B981;
   animation: pulseDot 1.8s infinite;
 }
 
@@ -109,8 +142,8 @@ body {
 
 .status-text {
   font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--coral-hot);
+  font-weight: 700;
+  color: var(--coral-blue-deep);
   letter-spacing: 0.02em;
 }
 
@@ -119,14 +152,14 @@ body {
   align-items: center;
   gap: 5px;
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #FFFFFF;
   text-decoration: none;
-  background: var(--coral-hot);
-  padding: 5px 12px;
+  background: linear-gradient(135deg, var(--coral-electric-blue) 0%, #0B5CD6 100%);
+  padding: 5px 14px;
   border-radius: 999px;
-  box-shadow: 0 4px 12px rgba(228, 75, 102, 0.35);
-  transition: transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(18, 108, 252, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .instagram-link:active {
@@ -138,26 +171,34 @@ body {
   height: 13px;
 }
 
-/* Mascot Doodle Cup */
-.mascot-cup {
-  width: 62px;
-  height: 62px;
-  margin: 0 auto 8px auto;
+/* Official Coral Brand Logo Frame */
+.brand-logo-frame {
+  width: 78px;
+  height: 78px;
+  margin: 0 auto 12px auto;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(18, 108, 252, 0.28), 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 3px solid #FFFFFF;
   cursor: pointer;
-  filter: drop-shadow(0 6px 14px rgba(20, 48, 84, 0.15));
-  animation: mascotWiggle 3.5s infinite ease-in-out;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  user-select: none;
 }
 
-@keyframes mascotWiggle {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-4px) rotate(-3deg); }
-  50% { transform: translateY(0) rotate(0deg); }
-  75% { transform: translateY(-4px) rotate(3deg); }
+.brand-logo-frame:hover {
+  transform: scale(1.06) rotate(-2deg);
+  box-shadow: 0 14px 30px rgba(252, 102, 162, 0.4);
 }
 
-.mascot-svg {
+.brand-logo-frame:active {
+  transform: scale(0.94);
+}
+
+.brand-logo-img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .brand-title {
@@ -165,15 +206,24 @@ body {
   font-size: 1.65rem;
   font-weight: 900;
   letter-spacing: 0.04em;
-  color: var(--navy-deep);
   line-height: 1.15;
+}
+
+.brand-pink {
+  color: var(--coral-bubble-pink);
+  text-shadow: 0 2px 8px rgba(252, 102, 162, 0.25);
+}
+
+.brand-blue {
+  color: var(--coral-electric-blue);
+  text-shadow: 0 2px 8px rgba(18, 108, 252, 0.2);
 }
 
 .brand-tagline {
   font-size: 0.80rem;
-  color: var(--navy-muted);
+  color: var(--text-muted);
   font-style: italic;
-  margin-top: 4px;
+  margin-top: 5px;
   margin-bottom: 14px;
 }
 
@@ -191,18 +241,19 @@ body {
   align-items: center;
   gap: 5px;
   font-size: 0.70rem;
-  font-weight: 500;
-  color: var(--navy-muted);
+  font-weight: 600;
+  color: var(--text-muted);
   background: #FFFFFF;
-  padding: 4px 10px;
-  border-radius: 6px;
+  padding: 4px 11px;
+  border-radius: 8px;
   border: 1px solid var(--border-subtle);
+  box-shadow: 0 1px 3px rgba(18, 108, 252, 0.04);
 }
 
 .facility-chip svg {
   width: 12px;
   height: 12px;
-  color: var(--coral-accent);
+  color: var(--coral-electric-blue);
 }
 
 .interactive-hint {
@@ -211,16 +262,16 @@ body {
   gap: 6px;
   font-size: 0.70rem;
   font-weight: 600;
-  color: var(--navy-deep);
+  color: var(--text-main);
   background: #FFFFFF;
   padding: 5px 14px;
   border-radius: 999px;
-  box-shadow: 0 4px 12px rgba(16, 36, 62, 0.06);
-  border: 1px solid var(--coral-border);
+  box-shadow: 0 4px 12px rgba(18, 108, 252, 0.06);
+  border: 1px solid var(--coral-pink-border);
 }
 
 .hint-sparkle {
-  color: var(--coral-hot);
+  color: var(--coral-bubble-pink);
 }
 
 /* =========================================================
@@ -230,11 +281,11 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(250, 248, 245, 0.95);
+  background-color: rgba(248, 250, 253, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: 10px 14px;
-  border-bottom: 1px solid rgba(235, 228, 221, 0.85);
+  border-bottom: 1px solid rgba(200, 220, 252, 0.7);
 }
 
 .category-scroll-track {
@@ -251,11 +302,11 @@ body {
 
 .cat-pill {
   white-space: nowrap;
-  padding: 7px 14px;
+  padding: 7px 15px;
   border-radius: 999px;
   font-size: 0.80rem;
   font-weight: 700;
-  color: var(--navy-muted);
+  color: var(--text-muted);
   text-decoration: none;
   background-color: #FFFFFF;
   border: 1px solid var(--border-subtle);
@@ -266,10 +317,10 @@ body {
 
 .cat-pill:hover,
 .cat-pill.active {
-  background-color: var(--navy-main);
+  background: linear-gradient(135deg, var(--coral-electric-blue) 0%, #0B5CD6 100%);
   color: #FFFFFF;
-  border-color: var(--navy-main);
-  box-shadow: 0 4px 10px rgba(20, 48, 84, 0.2);
+  border-color: var(--coral-electric-blue);
+  box-shadow: 0 4px 14px rgba(18, 108, 252, 0.35);
   transform: translateY(-1px);
 }
 
@@ -452,17 +503,17 @@ body {
 }
 
 .line-blue {
-  background: linear-gradient(90deg, var(--navy-main) 0%, rgba(20, 48, 84, 0.15) 100%);
+  background: linear-gradient(90deg, var(--coral-electric-blue) 0%, var(--coral-sky-accent) 70%, rgba(18, 108, 252, 0.05) 100%);
 }
 
 .line-pink {
-  background: linear-gradient(90deg, var(--coral-hot) 0%, rgba(228, 75, 102, 0.15) 100%);
+  background: linear-gradient(90deg, var(--coral-bubble-pink) 0%, #FF85B6 70%, rgba(252, 102, 162, 0.05) 100%);
 }
 
 .section-desc {
   font-size: 0.76rem;
   font-style: italic;
-  color: var(--navy-muted);
+  color: var(--text-muted);
   line-height: 1.35;
   margin-bottom: 12px;
 }
@@ -478,7 +529,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   padding: 6px 4px;
-  border-bottom: 1px dashed rgba(16, 36, 62, 0.09);
+  border-bottom: 1px dashed var(--border-dashed);
   transition: background 0.15s ease;
   border-radius: 4px;
 }
@@ -489,7 +540,7 @@ body {
 
 .menu-line:hover,
 .menu-line:active {
-  background: rgba(228, 75, 102, 0.05);
+  background: rgba(18, 108, 252, 0.04);
 }
 
 .line-info {
@@ -508,42 +559,42 @@ body {
 .item-name {
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--navy-deep);
+  color: var(--text-main);
   line-height: 1.25;
-  text-shadow: 0 1px 1px rgba(250, 248, 245, 0.95);
+  text-shadow: 0 1px 1px rgba(248, 250, 253, 0.95);
 }
 
 .tag-variant {
   font-size: 0.70rem;
   font-weight: 500;
-  color: var(--navy-muted);
+  color: var(--text-muted);
 }
 
 .item-desc {
   display: block;
   font-size: 0.72rem;
-  color: var(--navy-muted);
+  color: var(--text-muted);
   line-height: 1.3;
   margin-top: 2px;
-  text-shadow: 0 1px 1px rgba(250, 248, 245, 0.9);
+  text-shadow: 0 1px 1px rgba(248, 250, 253, 0.9);
 }
 
 .item-price {
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--navy-deep);
+  color: var(--text-main);
   letter-spacing: -0.02em;
   white-space: nowrap;
-  text-shadow: 0 1px 1px rgba(250, 248, 245, 0.95);
+  text-shadow: 0 1px 1px rgba(248, 250, 253, 0.95);
 }
 
 .text-pink {
-  color: var(--coral-hot) !important;
+  color: var(--coral-bubble-pink) !important;
 }
 
 .text-blue {
-  color: var(--navy-main) !important;
+  color: var(--coral-electric-blue) !important;
 }
 
 /* Badges */
@@ -551,28 +602,28 @@ body {
   font-size: 0.58rem;
   font-weight: 800;
   letter-spacing: 0.04em;
-  padding: 2px 6px;
-  border-radius: 4px;
+  padding: 2px 7px;
+  border-radius: 5px;
   text-transform: uppercase;
 }
 
 .pink-tag {
-  background-color: var(--coral-soft);
-  color: var(--coral-hot);
-  border: 1px solid var(--coral-border);
+  background-color: var(--coral-pink-soft);
+  color: var(--coral-pink-deep);
+  border: 1px solid var(--coral-pink-border);
 }
 
 .blue-tag {
-  background-color: rgba(20, 48, 84, 0.08);
-  color: var(--navy-main);
-  border: 1px solid rgba(20, 48, 84, 0.18);
+  background-color: var(--coral-blue-soft);
+  color: var(--coral-blue-deep);
+  border: 1px solid var(--coral-blue-border);
 }
 
 /* Additional Box */
 .additional-box {
   margin-top: 14px;
   background: #FFFFFF;
-  border: 1px dashed var(--border-subtle);
+  border: 1px dashed var(--border-dashed);
   border-radius: 8px;
   padding: 10px 12px;
 }
@@ -581,7 +632,7 @@ body {
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.05em;
-  color: var(--navy-muted);
+  color: var(--text-muted);
   margin-bottom: 6px;
   display: block;
 }
@@ -595,7 +646,7 @@ body {
 .add-chip {
   font-size: 0.72rem;
   background: var(--canvas-bg);
-  color: var(--navy-deep);
+  color: var(--text-main);
   padding: 3px 8px;
   border-radius: 6px;
   border: 1px solid var(--border-subtle);
@@ -604,7 +655,7 @@ body {
 .add-chip strong {
   font-family: var(--font-display);
   font-weight: 800;
-  color: var(--coral-hot);
+  color: var(--coral-bubble-pink);
   margin-left: 3px;
 }
 
@@ -622,13 +673,13 @@ body {
 }
 
 .dock-inner {
-  background: rgba(16, 36, 62, 0.94);
+  background: rgba(14, 26, 45, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 9px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(200, 220, 252, 0.2);
+  box-shadow: 0 10px 25px rgba(18, 108, 252, 0.22);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -638,7 +689,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: linear-gradient(135deg, var(--coral-hot) 0%, #D83A55 100%);
+  background: linear-gradient(135deg, var(--coral-bubble-pink) 0%, #E83F88 100%);
   color: #FFFFFF;
   border: none;
   padding: 7px 16px;
@@ -647,7 +698,7 @@ body {
   font-size: 0.78rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(228, 75, 102, 0.4);
+  box-shadow: 0 4px 14px rgba(252, 102, 162, 0.45);
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 

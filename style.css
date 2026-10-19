@@ -1,0 +1,404 @@
+/* =========================================================
+   Coral Coffee Space — Simple Editorial Mobile Menu
+   Theme: Soft Coral Pink & Deep Ocean Breeze
+   ========================================================= */
+
+:root {
+  /* Colors */
+  --navy-deep: #122135;
+  --navy-main: #1D3350;
+  --navy-muted: #536E8B;
+  --navy-soft: #D9E3EE;
+  
+  --coral-accent: #E26D77;
+  --coral-hover: #D05963;
+  --coral-tint: #FBECEE;
+  --coral-soft: #F5D3D7;
+
+  --bg-canvas: #FAF7F5;
+  --bg-white: #FFFFFF;
+  --border-light: #EBE3DE;
+  
+  /* Typography */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Layout */
+  --max-mobile-width: 460px;
+}
+
+/* Base Reset & Smooth Scroll */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: #F0ECE8;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--navy-deep);
+  background-color: var(--bg-canvas);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Mobile Frame Container */
+.menu-app-container {
+  width: 100%;
+  max-width: var(--max-mobile-width);
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--bg-canvas);
+  box-shadow: 0 0 50px rgba(18, 33, 53, 0.08);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* =========================================================
+   Header & Cafe Info
+   ========================================================= */
+.cafe-header {
+  padding: 36px 24px 20px 24px;
+  text-align: center;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-canvas) 100%);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  background-color: var(--coral-tint);
+  border: 1px solid var(--coral-soft);
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--coral-accent);
+  box-shadow: 0 0 0 3px rgba(226, 109, 119, 0.2);
+}
+
+.badge-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--coral-accent);
+  letter-spacing: 0.02em;
+}
+
+.brand-title {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--navy-deep);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.brand-subtitle {
+  font-size: 0.85rem;
+  color: var(--navy-muted);
+  margin-bottom: 16px;
+}
+
+.facility-tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.facility-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--navy-muted);
+  background: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+}
+
+.pill-icon {
+  width: 12px;
+  height: 12px;
+  color: var(--coral-accent);
+}
+
+/* =========================================================
+   Sticky Category Nav (Pills)
+   ========================================================= */
+.category-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(250, 247, 245, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 18px;
+  border-bottom: 1px solid rgba(235, 227, 222, 0.8);
+}
+
+.category-scroll-track {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.category-scroll-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cat-pill {
+  white-space: nowrap;
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy-muted);
+  text-decoration: none;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  transition: all 0.25s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.cat-pill:hover,
+.cat-pill.active {
+  background-color: var(--navy-deep);
+  color: #FFFFFF;
+  border-color: var(--navy-deep);
+  box-shadow: 0 4px 10px rgba(18, 33, 53, 0.15);
+}
+
+/* =========================================================
+   Editorial Menu Sections
+   ========================================================= */
+.menu-content {
+  padding: 16px 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.menu-section {
+  padding-top: 14px;
+}
+
+/* 2-Column Editorial Row */
+.editorial-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.layout-img-left {
+  flex-direction: row;
+}
+
+.layout-img-right {
+  flex-direction: row;
+}
+
+/* Product Cutout Image Wrapper */
+.product-visual-wrapper {
+  flex: 0 0 38%;
+  max-width: 38%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-inner {
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-cutout {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 18px rgba(18, 33, 53, 0.10));
+  user-select: none;
+}
+
+/* =========================================================
+   Scroll-Driven Appearance (Muncul & Menghilang Halus)
+   ========================================================= */
+.scroll-fade-target {
+  opacity: 0;
+  transform: translateY(32px) scale(0.92);
+  filter: blur(4px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+/* State 1: Active in viewport (Fully visible & crisp) */
+.scroll-fade-target.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0px);
+}
+
+/* State 2: Scrolled past upwards (Soft fade out) */
+.scroll-fade-target.is-scrolled-past {
+  opacity: 0.15;
+  transform: translateY(-28px) scale(0.94);
+  filter: blur(2px);
+}
+
+/* =========================================================
+   Product Info & Pricing Typography
+   ========================================================= */
+.product-info-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.section-heading-box {
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--navy-deep);
+  line-height: 1.2;
+}
+
+.title-underline {
+  width: 100%;
+  height: 2px;
+  background-color: var(--navy-deep);
+  margin-top: 4px;
+  border-radius: 1px;
+}
+
+.section-desc {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--navy-muted);
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+/* Variant List & Tabular Pricing */
+.variant-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.variant-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(18, 33, 53, 0.08);
+}
+
+.variant-item:last-child {
+  border-bottom: none;
+}
+
+.variant-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy-deep);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.variant-note {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--navy-muted);
+}
+
+.icon-fav {
+  width: 13px;
+  height: 13px;
+  color: var(--coral-accent);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.variant-price {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  letter-spacing: -0.02em;
+  padding-left: 10px;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.cafe-footer {
+  margin-top: auto;
+  padding: 24px 20px 40px 20px;
+  text-align: center;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-light);
+  margin-bottom: 16px;
+}
+
+.footer-note {
+  font-size: 0.72rem;
+  color: var(--navy-muted);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.footer-brand {
+  font-size: 0.70rem;
+  color: #8E9BAA;
+}
+
+/* Responsive adjustment for very compact mobile screens */
+@media (max-width: 360px) {
+  .brand-title {
+    font-size: 1.45rem;
+  }
+  .product-visual-wrapper {
+    flex: 0 0 35%;
+  }
+  .section-title {
+    font-size: 1.05rem;
+  }
+  .variant-name {
+    font-size: 0.82rem;
+  }
+  .variant-price {
+    font-size: 0.98rem;
+  }
+}

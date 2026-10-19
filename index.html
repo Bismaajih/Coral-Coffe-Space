@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Coral Coffee Space — Menu</title>
+  <meta name="description" content="Menu digital simpel dan estetik Coral Coffee Space. Nikmati aneka kopi botolan, signature espresso, es krim, dan hidangan lezat.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Mobile Viewport Container -->
+  <div class="menu-app-container">
+    
+    <!-- Top Bar & Header -->
+    <header class="cafe-header" id="header">
+      <div class="brand-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Open Daily: 08.00 – 22.00</span>
+      </div>
+      <h1 class="brand-title">CORAL COFFEE SPACE</h1>
+      <p class="brand-subtitle">Ruang ngopi santai bernuansa hangat & santai</p>
+      
+      <!-- Facility & Location Quick Pills -->
+      <div class="facility-tags">
+        <span class="facility-pill">
+          <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+            <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+            <line x1="12" y1="20" x2="12.01" y2="20"></line>
+          </svg>
+          Wi-Fi Cepat
+        </span>
+        <span class="facility-pill">
+          <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Indoor & Outdoor
+        </span>
+      </div>
+    </header>
+
+    <!-- Sticky Category Nav Pills -->
+    <nav class="category-nav" id="categoryNav" aria-label="Kategori Menu">
+      <div class="category-scroll-track">
+        <a href="#seri-botolan" class="cat-pill active" data-target="seri-botolan">Botolan</a>
+        <a href="#es-krim" class="cat-pill" data-target="es-krim">Es Krim</a>
+        <a href="#signature-coffee" class="cat-pill" data-target="signature-coffee">Signature</a>
+        <a href="#coral-bites" class="cat-pill" data-target="coral-bites">Makanan</a>
+      </div>
+    </nav>
+
+    <!-- Main Menu Content -->
+    <main class="menu-content" id="menuContent">
+
+      <!-- ================= SECTION 1: SERI BOTOLAN ================= -->
+      <section class="menu-section" id="seri-botolan">
+        <div class="editorial-row layout-img-left">
+          
+          <!-- Product Cutout Image -->
+          <div class="product-visual-wrapper scroll-fade-target">
+            <div class="image-inner">
+              <img src="assets/images/botolan.png" alt="Seri Kopi Botolan Coral Coffee Space" class="product-cutout" id="img-botolan" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'200\' viewBox=\'0 0 160 200\' fill=\'none\'><rect x=\'20\' y=\'30\' width=\'50\' height=\'150\' rx=\'8\' fill=\'%23F5D6DA\'/><rect x=\'80\' y=\'60\' width=\'40\' height=\'120\' rx=\'8\' fill=\'%23D8E2EC\'/><rect x=\'35\' y=\'15\' width=\'20\' height=\'15\' rx=\'3\' fill=\'%23162A45\'/><rect x=\'90\' y=\'45\' width=\'20\' height=\'15\' rx=\'3\' fill=\'%23162A45\'/><text x=\'80\' y=\'195\' text-anchor=\'middle\' fill=\'%23527494\' font-size=\'11\' font-family=\'sans-serif\'>[Siapkan botolan.png]</text></svg>';">
+            </div>
+          </div>
+
+          <!-- Menu Detail & Pricing -->
+          <div class="product-info-wrapper">
+            <div class="section-heading-box">
+              <h2 class="section-title">SERI BOTOLAN</h2>
+              <div class="title-underline"></div>
+            </div>
+            
+            <p class="section-desc">Kopi susu racikan khas Coral dalam kemasan botol siap simpan & berbagi.</p>
+
+            <ul class="variant-list">
+              <li class="variant-item">
+                <span class="variant-name">Jumbo <span class="variant-note">(1 Liter)</span></span>
+                <span class="variant-price">89</span>
+              </li>
+              <li class="variant-item highlight">
+                <span class="variant-name">
+                  Medium <span class="variant-note">(500 ml)</span>
+                  <svg class="icon-fav" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                  </svg>
+                </span>
+                <span class="variant-price">32</span>
+              </li>
+              <li class="variant-item">
+                <span class="variant-name">Mini <span class="variant-note">(250 ml)</span></span>
+                <span class="variant-price">17</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= SECTION 2: ES KRIM & DESSERT (ALTERNATING: IMG RIGHT) ================= -->
+      <section class="menu-section" id="es-krim">
+        <div class="editorial-row layout-img-right">
+
+          <!-- Menu Detail & Pricing (Left) -->
+          <div class="product-info-wrapper">
+            <div class="section-heading-box">
+              <h2 class="section-title">ES KRIM</h2>
+              <div class="title-underline"></div>
+            </div>
+
+            <p class="section-desc">Lembut, segar, dan manis pas untuk menemani obrolan santai.</p>
+
+            <ul class="variant-list">
+              <li class="variant-item highlight">
+                <span class="variant-name">
+                  Es Krim Kopi Coral
+                  <span class="variant-note">Cone Waffle</span>
+                  <svg class="icon-fav" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                  </svg>
+                </span>
+                <span class="variant-price">10</span>
+              </li>
+              <li class="variant-item">
+                <span class="variant-name">
+                  Es Krim Matcha Coral
+                  <span class="variant-note">1 scoop / 2 scoops</span>
+                </span>
+                <span class="variant-price">15 / 20</span>
+              </li>
+              <li class="variant-item">
+                <span class="variant-name">
+                  Es Krim Vanila Berry
+                  <span class="variant-note">1 scoop / 2 scoops</span>
+                </span>
+                <span class="variant-price">10 / 15</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Product Cutout Image (Right) -->
+          <div class="product-visual-wrapper scroll-fade-target">
+            <div class="image-inner">
+              <img src="assets/images/es-krim.png" alt="Es Krim Coral Coffee Space" class="product-cutout" id="img-eskrim" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'200\' viewBox=\'0 0 160 200\' fill=\'none\'><path d=\'M80 30 C60 30, 45 60, 50 90 C50 110, 80 180, 80 180 C80 180, 110 110, 110 90 C115 60, 100 30, 80 30 Z\' fill=\'%23F5D6DA\'/><text x=\'80\' y=\'195\' text-anchor=\'middle\' fill=\'%23527494\' font-size=\'11\' font-family=\'sans-serif\'>[Siapkan es-krim.png]</text></svg>';">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= SECTION 3: SIGNATURE COFFEE ================= -->
+      <section class="menu-section" id="signature-coffee">
+        <div class="editorial-row layout-img-left">
+
+          <!-- Product Cutout Image -->
+          <div class="product-visual-wrapper scroll-fade-target">
+            <div class="image-inner">
+              <img src="assets/images/signature.png" alt="Signature Coffee Coral" class="product-cutout" id="img-signature" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'200\' viewBox=\'0 0 160 200\' fill=\'none\'><rect x=\'45\' y=\'40\' width=\'70\' height=\'130\' rx=\'6\' fill=\'%23D8E2EC\'/><rect x=\'40\' y=\'30\' width=\'80\' height=\'10\' rx=\'3\' fill=\'%23162A45\'/><text x=\'80\' y=\'195\' text-anchor=\'middle\' fill=\'%23527494\' font-size=\'11\' font-family=\'sans-serif\'>[Siapkan signature.png]</text></svg>';">
+            </div>
+          </div>
+
+          <!-- Menu Detail & Pricing -->
+          <div class="product-info-wrapper">
+            <div class="section-heading-box">
+              <h2 class="section-title">SIGNATURE COFFEE</h2>
+              <div class="title-underline"></div>
+            </div>
+
+            <p class="section-desc">Sensasi perpaduan espresso pilihan dengan sentuhan rasa unik Coral.</p>
+
+            <ul class="variant-list">
+              <li class="variant-item highlight">
+                <span class="variant-name">
+                  Coral Sea Salt Latte
+                  <span class="variant-note">Creamy, gurih & sentuhan manis</span>
+                  <svg class="icon-fav" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                  </svg>
+                </span>
+                <span class="variant-price">28</span>
+              </li>
+              <li class="variant-item">
+                <span class="variant-name">
+                  Pink Ocean Cloud
+                  <span class="variant-note">Cold brew dengan cold foam berry</span>
+                </span>
+                <span class="variant-price">26</span>
+              </li>
+              <li class="variant-item">
+                <span class="variant-name">
+                  Kopi Susu Aren Coral
+                  <span class="variant-note">Espresso pekat, gula aren asli, susu</span>
+                </span>
+                <span class="variant-price">22</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= SECTION 4: CORAL BITES & FOOD (ALTERNATING: IMG RIGHT) ================= -->
+      <section class="menu-section" id="coral-bites">
+        <div class="editorial-row layout-img-right">
+
+          <!-- Menu Detail & Pricing (Left) -->
+          <div class="product-info-wrapper">
+            <div class="section-heading-box">
+              <h2 class="section-title">CORAL BITES</h2>
+              <div class="title-underline"></div>
+            </div>
+
+            <p class="section-desc">Pilihan makanan mengenyangkan & camilan renyah teman minum kopi.</p>
+
+            <ul class="variant-list">
+              <li class="variant-item highlight">
+                <span class="variant-name">
+                  Nasi Merem Melek Coral
+                  <span class="variant-note">Nasi gurih + ayam crispy & sambal korek</span>
+                  <svg class="icon-fav" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                  </svg>
+                </span>
+                <span class="variant-price">35</span>
+              </li>
+              <li class="variant-item">
+                <span class="variant-name">
+                  Nasi Ayam Geprek Sambal Matah
+                  <span class="variant-note">Lengkap dengan telur & jukut goreng</span>
+                </span>
+                <span class="variant-price">33</span>
+              </li>
+              <li class="variant-item">
+                <span class="variant-name">
+                  Truffle Parmesan Fries
+                  <span class="variant-note">Kentang goreng renyah wangi truffle</span>
+                </span>
+                <span class="variant-price">24</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Product Cutout Image (Right) -->
+          <div class="product-visual-wrapper scroll-fade-target">
+            <div class="image-inner">
+              <img src="assets/images/makanan.png" alt="Coral Bites Food" class="product-cutout" id="img-makanan" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'200\' viewBox=\'0 0 160 200\' fill=\'none\'><rect x=\'20\' y=\'70\' width=\'120\' height=\'70\' rx=\'10\' fill=\'%23F5D6DA\'/><text x=\'80\' y=\'165\' text-anchor=\'middle\' fill=\'%23527494\' font-size=\'11\' font-family=\'sans-serif\'>[Siapkan makanan.png]</text></svg>';">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer Note -->
+    <footer class="cafe-footer">
+      <div class="footer-divider"></div>
+      <p class="footer-note">* harga dihitung dalam ribuan rupiah • harga belum termasuk pajak</p>
+      <p class="footer-brand">© 2026 Coral Coffee Space. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

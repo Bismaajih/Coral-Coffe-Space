@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Coral Coffee Space — Menu & Catalog</title>
-  <meta name="description" content="Menu digital dan katalog visual resmi Coral Coffee Space. Dimensi rasa kopi artisanal, mocktail segar, dan hidangan nikmat. Where every cup tells a story.">
+  <title>Coral Coffee Space — Menu</title>
+  <meta name="description" content="Menu digital resmi Coral Coffee Space. Kopi nikmat, mocktail segar, dan hidangan lezat. Where every cup tells a story.">
 
   <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,22 +15,24 @@
 </head>
 <body>
 
-  <!-- App Wrapper (Mobile Viewport Optimized) -->
+  <!-- Mobile Viewport Container -->
   <div class="menu-app-container">
 
-    <!-- Hero Header with Atmospheric Background Overlay from Real Catalog -->
-    <header class="cafe-hero" id="header" style="--hero-bg: url('assets/images/drink/catalog drink 1.png');">
-      <div class="hero-backdrop-scrim"></div>
-
-      <div class="hero-content">
-        <!-- Top Status Row -->
-        <div class="hero-top-row">
+    <!-- ================= ATMOSPHERIC HERO BANNER =================
+         Foto background besar dengan dark overlay sinematik sesuai referensi user
+    ================================================================ -->
+    <header class="ambient-photo-banner hero-overlay" style="--ambient-bg: url('assets/images/drink/catalog drink 1.png');">
+      <div class="banner-dim-overlay"></div>
+      
+      <div class="banner-inner">
+        <!-- Top Status Bar -->
+        <div class="banner-top-bar">
           <div class="status-chip">
-            <span class="pulsing-dot"></span>
-            <span class="status-label">Open Daily: 08.00 – 22.00</span>
+            <span class="pulsing-green-dot"></span>
+            <span class="status-text">Open Daily: 08.00 – 22.00</span>
           </div>
-          
-          <a href="https://instagram.com/coralcoffeespace" target="_blank" rel="noopener noreferrer" class="ig-chip" aria-label="Instagram Coral Coffee Space">
+
+          <a href="https://instagram.com/coralcoffeespace" target="_blank" rel="noopener noreferrer" class="instagram-link" aria-label="Instagram">
             <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -41,35 +43,36 @@
         </div>
 
         <!-- Mascot & Brand Title -->
-        <div class="brand-center">
+        <div class="brand-hero-center">
           <div class="mascot-cup" id="mascotCup" title="Tap me!">
             <svg viewBox="0 0 100 100" class="mascot-svg" fill="none">
               <path d="M30 25 C25 15, 38 8, 48 20 C52 10, 68 12, 60 25" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" fill="#FFFFFF"/>
               <path d="M22 30 L30 75 C32 82, 68 82, 70 75 L78 30 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3"/>
               <path d="M74 40 C85 40, 85 62, 72 65" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
-              <circle cx="40" cy="50" r="3.5" fill="#143054"/>
-              <circle cx="60" cy="50" r="3.5" fill="#143054"/>
-              <path d="M42 60 Q50 68 58 60" stroke="#143054" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="40" cy="50" r="3.5" fill="#122744"/>
+              <circle cx="60" cy="50" r="3.5" fill="#122744"/>
+              <path d="M42 60 Q50 68 58 60" stroke="#122744" stroke-width="3" stroke-linecap="round"/>
               <path d="M36 78 L30 92 L22 92" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
               <path d="M64 78 L70 92 L78 92" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
             </svg>
           </div>
 
           <h1 class="brand-title">CORAL COFFEE SPACE</h1>
-          <p class="brand-tagline">“Where Every Cup Tells a Story”</p>
+          <p class="brand-quote">“What goes best with a cup of coffee? Another cup.”</p>
+          <p class="brand-tagline">Where every cup tells a story</p>
         </div>
 
         <!-- Facility Badges -->
         <div class="facility-row">
-          <span class="facility-tag">
+          <span class="facility-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
-            Free Wi-Fi
+            Wi-Fi Kencang
           </span>
-          <span class="facility-tag">
+          <span class="facility-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M9 3v18"></path><path d="M14 9h4"></path><path d="M14 15h4"></path></svg>
             Cozy Space
           </span>
-          <span class="facility-tag">
+          <span class="facility-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             Dine-In & Takeaway
           </span>
@@ -78,7 +81,7 @@
         <!-- Interactive Hint -->
         <div class="interactive-hint">
           <span class="hint-sparkle">✨</span>
-          <span>Tap ikon produk kecil untuk efek goyang & info segar!</span>
+          <span>Tap ikon produk kecil di samping menu untuk efek goyang!</span>
         </div>
       </div>
     </header>
@@ -91,752 +94,639 @@
         <a href="#non-coffee" class="cat-pill" data-target="non-coffee">🍓 Non Coffee</a>
         <a href="#tea-series" class="cat-pill" data-target="tea-series">🍵 Tea Series</a>
         <a href="#coral-kitchen" class="cat-pill" data-target="coral-kitchen">🍝 Coral Kitchen</a>
-        <a href="#snacks-dessert" class="cat-pill" data-target="snacks-dessert">🍟 Snacks & Bites</a>
+        <a href="#snacks-bites" class="cat-pill" data-target="snacks-bites">🍟 Snacks & Bites</a>
       </div>
     </nav>
 
-    <!-- Main Menu Sections -->
-    <main class="menu-main" id="menuMain">
+    <!-- ================= EDITORIAL MENU CANVAS =================
+         Layout editorial bersih tanpa per-card box frame kaku
+    ============================================================ -->
+    <main class="editorial-canvas" id="menuMain">
 
-      <!-- ================= 1. COFFEE BASED =================
-           Overlay Background: coral cheezy.png (Non-remove-bg)
-           Cutout Thumbnails: coral cheezy remove bg.png & butterscotch remove bg.png
-      ====================================================== -->
-      <section class="menu-catalog-card scroll-fade-card" id="coffee-based" style="--catalog-overlay: url('assets/images/drink/coral cheezy.png');">
-        <!-- Atmospheric Background Scrim -->
-        <div class="card-bg-overlay"></div>
-        
-        <div class="card-inner-content">
-          <div class="catalog-header-block">
-            <div class="header-text-left">
-              <span class="catalog-badge-sub">SPECIAL BREWED</span>
-              <h2 class="catalog-title">COFFEE BASED</h2>
+      <!-- ================= 1. COFFEE BASED ================= -->
+      <section class="editorial-section" id="coffee-based">
+        <div class="section-heading-box">
+          <h2 class="editorial-title">COFFEE BASED</h2>
+          <div class="title-underline underline-blue"></div>
+        </div>
+        <p class="section-desc">Biji kopi pilihan dengan racikan foam gurih manis khas Coral.</p>
+
+        <div class="editorial-table">
+
+          <!-- Coral Coffee -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Coral Coffee</span>
+              <span class="item-note">Signature house blend, manis lembut pas</span>
             </div>
-            <span class="catalog-ambient-tag">Fresh Espresso</span>
+            <div class="item-right">
+              <span class="item-price">22</span>
+            </div>
           </div>
 
-          <p class="catalog-desc">Biji kopi pilihan berpadu racikan foam gurih manis khas Coral.</p>
-
-          <div class="catalog-item-list">
-
-            <!-- Item: Coral Coffee -->
-            <div class="menu-item-row" data-name="Coral Coffee">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/coral cheezy remove bg.png" alt="Coral Coffee" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Coral Coffee</span>
+          <!-- Coral Cheezy (MATCHED ASSET: coral cheezy remove bg.png) -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-with-thumb">
+                <!-- Thumbnail kecil tipis di samping menu -->
+                <div class="thumb-mini-box">
+                  <img src="assets/images/drink/coral cheezy remove bg.png" alt="Coral Cheezy" class="thumb-cutout shake-on-tap" loading="eager">
                 </div>
-                <span class="item-sub">Signature house blend, manis lembut pas</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">22</span>
-              </div>
-            </div>
-
-            <!-- Item: Coral Cheezy (MUST TRY) -->
-            <div class="menu-item-row featured-row" data-name="Coral Cheezy">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/coral cheezy remove bg.png" alt="Coral Cheezy" class="thumb-cutout shake-trigger" loading="eager">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Coral Cheezy</span>
+                <div class="name-badge-group">
+                  <span class="item-name">Coral Cheezy</span>
                   <span class="badge-pill pill-pink">⭐ MUST TRY</span>
                 </div>
-                <span class="item-sub">Espresso kental berbalut krim keju gurih velvety</span>
               </div>
-              <div class="item-price-box">
-                <span class="price-val text-pink">25</span>
-              </div>
+              <span class="item-note pl-thumb">Espresso kental berpadu krim keju gurih velvety</span>
             </div>
-
-            <!-- Item: Banoffee -->
-            <div class="menu-item-row" data-name="Banoffee">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/butterscotch remove bg.png" alt="Banoffee" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Banoffee</span>
-                </div>
-                <span class="item-sub">Perpaduan harum pisang segar & caramel toffee</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">23</span>
-              </div>
+            <div class="item-right">
+              <span class="item-price text-pink">25</span>
             </div>
-
-            <!-- Item: Cheezy Banoffee (FAVORIT) -->
-            <div class="menu-item-row featured-row" data-name="Cheezy Banoffee">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/butterscotch remove bg.png" alt="Cheezy Banoffee" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Cheezy Banoffee</span>
-                  <span class="badge-pill pill-blue">🔥 FAVORIT</span>
-                </div>
-                <span class="item-sub">Banoffee legit dengan topping thick cream keju</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val text-blue">26</span>
-              </div>
-            </div>
-
-            <!-- Item: Americano -->
-            <div class="menu-item-row" data-name="Americano">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Americano <span class="tag-variant">Ice / Hot</span></span>
-                </div>
-                <span class="item-sub">Espresso murni dengan aroma segar tajam</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">20</span>
-              </div>
-            </div>
-
-            <!-- Item: Cranberrycano -->
-            <div class="menu-item-row featured-row" data-name="Cranberrycano">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/drink 1 remove bg.png" alt="Cranberrycano" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Cranberrycano</span>
-                  <span class="badge-pill pill-pink">FRESH</span>
-                </div>
-                <span class="item-sub">Americano dingin berpadu manis asam jus cranberry</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val text-pink">23</span>
-              </div>
-            </div>
-
-            <!-- Item: Latte -->
-            <div class="menu-item-row" data-name="Latte">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Latte <span class="tag-variant">Ice / Hot</span></span>
-                </div>
-                <span class="item-sub">Espresso dengan susu steamed lembut gurih</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">25</span>
-              </div>
-            </div>
-
-            <!-- Item: Cappucino -->
-            <div class="menu-item-row" data-name="Cappucino">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Cappucino <span class="tag-variant">Ice / Hot</span></span>
-                </div>
-                <span class="item-sub">Keseimbangan foam susu tebal dan espresso pekat</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">25</span>
-              </div>
-            </div>
-
-            <!-- Item: Affogato -->
-            <div class="menu-item-row" data-name="Affogato Coffee">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Affogato Coffee</span>
-                </div>
-                <span class="item-sub">Single shot espresso di atas es krim vanila manis</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">20</span>
-              </div>
-            </div>
-
           </div>
+
+          <!-- Banoffee -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Banoffee</span>
+              <span class="item-note">Perpaduan harum pisang segar & caramel toffee</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">23</span>
+            </div>
+          </div>
+
+          <!-- Cheezy Banoffee -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-badge-group">
+                <span class="item-name">Cheezy Banoffee</span>
+                <span class="badge-pill pill-blue">🔥 FAVORIT</span>
+              </div>
+              <span class="item-note">Banoffee legit dengan topping thick cream keju</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price text-blue">26</span>
+            </div>
+          </div>
+
+          <!-- Americano -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Americano <span class="variant-tag">Ice / Hot</span></span>
+              <span class="item-note">Espresso murni dengan aroma segar tajam</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">20</span>
+            </div>
+          </div>
+
+          <!-- Cranberrycano -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-badge-group">
+                <span class="item-name">Cranberrycano</span>
+                <span class="badge-pill pill-pink">FRESH</span>
+              </div>
+              <span class="item-note">Americano dingin berpadu manis asam jus cranberry</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price text-pink">23</span>
+            </div>
+          </div>
+
+          <!-- Latte -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Latte <span class="variant-tag">Ice / Hot</span></span>
+              <span class="item-note">Espresso dengan susu steamed lembut gurih</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">25</span>
+            </div>
+          </div>
+
+          <!-- Cappucino -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Cappucino <span class="variant-tag">Ice / Hot</span></span>
+              <span class="item-note">Keseimbangan foam susu tebal dan espresso pekat</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">25</span>
+            </div>
+          </div>
+
+          <!-- Affogato Coffee -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Affogato Coffee</span>
+              <span class="item-note">Single shot espresso disiram di atas es krim vanila</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">20</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      <!-- ================= 2. COFFEE MOCKTAIL =================
-           Overlay Background: drink 2.png (Macro cold foam & citrus zest)
-           Cutout Thumbnails: drink 1 remove bg.png
-      ======================================================== -->
-      <section class="menu-catalog-card scroll-fade-card" id="coffee-mocktail" style="--catalog-overlay: url('assets/images/drink/drink 2.png');">
-        <div class="card-bg-overlay"></div>
+      <!-- ================= 2. COFFEE MOCKTAIL ================= -->
+      <section class="editorial-section" id="coffee-mocktail">
+        <div class="section-heading-box">
+          <h2 class="editorial-title">COFFEE MOCKTAIL</h2>
+          <div class="title-underline underline-pink"></div>
+        </div>
+        <p class="section-desc">Eksplorasi sensasi rasa buah tropis segar berpadu karakter kopi Coral.</p>
 
-        <div class="card-inner-content">
-          <div class="catalog-header-block">
-            <div class="header-text-left">
-              <span class="catalog-badge-sub text-pink-sub">ARTISANAL BLEND</span>
-              <h2 class="catalog-title">COFFEE MOCKTAIL</h2>
+        <div class="editorial-table">
+
+          <!-- Strawberry Montblanc -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-badge-group">
+                <span class="item-name">Strawberry Montblanc</span>
+                <span class="badge-pill pill-pink">⭐ SIGNATURE</span>
+              </div>
+              <span class="item-note">Espresso mocktail dingin dengan layer manis segar stroberi</span>
             </div>
-            <span class="catalog-ambient-tag">Cold Infused</span>
+            <div class="item-right">
+              <span class="item-price text-pink">29</span>
+            </div>
           </div>
 
-          <p class="catalog-desc">Eksplorasi sensasi rasa buah tropis segar berpadu karakter kopi Coral.</p>
-
-          <div class="catalog-item-list">
-
-            <!-- Item: Strawberry Montblanc -->
-            <div class="menu-item-row featured-row" data-name="Strawberry Montblanc">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/drink 1 remove bg.png" alt="Strawberry Montblanc" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Strawberry Montblanc</span>
-                  <span class="badge-pill pill-pink">⭐ SIGNATURE</span>
-                </div>
-                <span class="item-sub">Espresso mocktail dingin dengan layer manis segar stroberi</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val text-pink">29</span>
-              </div>
+          <!-- Manggo Montblanc -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Manggo Montblanc</span>
+              <span class="item-note">Aroma mangga manis harum berpadu kopi dingin segar</span>
             </div>
-
-            <!-- Item: Manggo Montblanc -->
-            <div class="menu-item-row" data-name="Manggo Montblanc">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/drink 1 remove bg.png" alt="Manggo Montblanc" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Manggo Montblanc</span>
-                </div>
-                <span class="item-sub">Aroma mangga manis harum berpadu kopi dingin segar</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">29</span>
-              </div>
+            <div class="item-right">
+              <span class="item-price">29</span>
             </div>
-
-            <!-- Item: Orange Montblanc -->
-            <div class="menu-item-row featured-row" data-name="Orange Montblanc">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/drink 1 remove bg.png" alt="Orange Montblanc" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Orange Montblanc</span>
-                  <span class="badge-pill pill-blue">CITRUS POP</span>
-                </div>
-                <span class="item-sub">Kesegaran sitrus jeruk yang mengangkat aroma kopi</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val text-blue">29</span>
-              </div>
-            </div>
-
           </div>
+
+          <!-- Orange Montblanc -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-badge-group">
+                <span class="item-name">Orange Montblanc</span>
+                <span class="badge-pill pill-blue">CITRUS POP</span>
+              </div>
+              <span class="item-note">Kesegaran sitrus jeruk yang mengangkat aroma kopi</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price text-blue">29</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      <!-- ================= 3. NON COFFEE =================
-           Overlay Background: apple jack.png (Green iced drink & chia)
-           Cutout Thumbnails: apple jack remove bg.png & strawberry matcha.png
-      =================================================== -->
-      <section class="menu-catalog-card scroll-fade-card" id="non-coffee" style="--catalog-overlay: url('assets/images/drink/apple jack.png');">
-        <div class="card-bg-overlay"></div>
+      <!-- ================= 3. NON COFFEE ================= -->
+      <section class="editorial-section" id="non-coffee">
+        <div class="section-heading-box">
+          <h2 class="editorial-title">NON COFFEE</h2>
+          <div class="title-underline underline-blue"></div>
+        </div>
+        <p class="section-desc">Pilihan minuman segar tanpa kafein dengan layer rasa unik memikat.</p>
 
-        <div class="card-inner-content">
-          <div class="catalog-header-block">
-            <div class="header-text-left">
-              <span class="catalog-badge-sub">SWEET & CREAMY</span>
-              <h2 class="catalog-title">NON COFFEE</h2>
+        <div class="editorial-table">
+
+          <!-- Blue Fire -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-badge-group">
+                <span class="item-name">Blue Fire</span>
+                <span class="badge-pill pill-blue">OCEAN VIBE</span>
+              </div>
+              <span class="item-note">Minuman khas biru laut Coral yang segar manis eksotis</span>
             </div>
-            <span class="catalog-ambient-tag">No Caffeine</span>
+            <div class="item-right">
+              <span class="item-price text-blue">25</span>
+            </div>
           </div>
 
-          <p class="catalog-desc">Pilihan minuman segar tanpa kafein dengan layer rasa unik memikat.</p>
-
-          <div class="catalog-item-list">
-
-            <!-- Item: Blue Fire -->
-            <div class="menu-item-row featured-row" data-name="Blue Fire">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/drink 2 remove bg.png" alt="Blue Fire" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Blue Fire</span>
-                  <span class="badge-pill pill-blue">OCEAN VIBE</span>
-                </div>
-                <span class="item-sub">Minuman khas biru laut Coral yang segar dan manis eksotis</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val text-blue">25</span>
-              </div>
+          <!-- Purple Pop -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Purple Pop</span>
+              <span class="item-note">Sparkling berry anggur dengan sensasi menyegarkan</span>
             </div>
-
-            <!-- Item: Purple Pop -->
-            <div class="menu-item-row" data-name="Purple Pop">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/drink 2 remove bg.png" alt="Purple Pop" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Purple Pop</span>
-                </div>
-                <span class="item-sub">Sparkling berry anggur dengan sensasi menyegarkan</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">25</span>
-              </div>
+            <div class="item-right">
+              <span class="item-price">25</span>
             </div>
+          </div>
 
-            <!-- Item: Apple Jack -->
-            <div class="menu-item-row featured-row" data-name="Apple Jack">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/apple jack remove bg.png" alt="Apple Jack" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Apple Jack</span>
+          <!-- Apple Jack (MATCHED ASSET: apple jack remove bg.png) -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-with-thumb">
+                <!-- Thumbnail kecil tipis di samping menu -->
+                <div class="thumb-mini-box">
+                  <img src="assets/images/drink/apple jack remove bg.png" alt="Apple Jack" class="thumb-cutout shake-on-tap" loading="lazy">
+                </div>
+                <div class="name-badge-group">
+                  <span class="item-name">Apple Jack</span>
                   <span class="badge-pill pill-pink">FAVORIT</span>
                 </div>
-                <span class="item-sub">Sensasi apel renyah berkarakter dengan aftertaste manis</span>
               </div>
-              <div class="item-price-box">
-                <span class="price-val text-pink">22</span>
-              </div>
+              <span class="item-note pl-thumb">Sensasi apel renyah berkarakter dengan aftertaste manis</span>
             </div>
+            <div class="item-right">
+              <span class="item-price text-pink">22</span>
+            </div>
+          </div>
 
-            <!-- Item: Cheezy Taro -->
-            <div class="menu-item-row" data-name="Cheezy Taro">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Cheezy Taro</span>
+          <!-- Cheezy Taro -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Cheezy Taro</span>
+              <span class="item-note">Taro wangi lembut diselimuti foam keju gurih</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">23</span>
+            </div>
+          </div>
+
+          <!-- Cheezy Red Velvet -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Cheezy Red Velvet</span>
+              <span class="item-note">Kue red velvet manis dalam segelas minuman creamy</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">23</span>
+            </div>
+          </div>
+
+          <!-- Cheezy Matcha -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Cheezy Matcha</span>
+              <span class="item-note">Matcha hijau otentik dengan topping gurih krim keju</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">23</span>
+            </div>
+          </div>
+
+          <!-- Cheezy Chocolate -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Cheezy Chocolate</span>
+              <span class="item-note">Cokelat pekat rich berpadu foam keju tebal</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">25</span>
+            </div>
+          </div>
+
+          <!-- Strawberry Matcha (MATCHED ASSET: strawberry matcha.png) -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-with-thumb">
+                <!-- Thumbnail kecil tipis di samping menu -->
+                <div class="thumb-mini-box">
+                  <img src="assets/images/drink/strawberry matcha.png" alt="Strawberry Matcha" class="thumb-cutout shake-on-tap" loading="lazy">
                 </div>
-                <span class="item-sub">Taro wangi lembut diselimuti foam keju gurih</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">23</span>
-              </div>
-            </div>
-
-            <!-- Item: Cheezy Red Velvet -->
-            <div class="menu-item-row" data-name="Cheezy Red Velvet">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Cheezy Red Velvet</span>
-                </div>
-                <span class="item-sub">Kue red velvet manis dalam segelas minuman creamy</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">23</span>
-              </div>
-            </div>
-
-            <!-- Item: Cheezy Matcha -->
-            <div class="menu-item-row" data-name="Cheezy Matcha">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Cheezy Matcha</span>
-                </div>
-                <span class="item-sub">Matcha hijau otentik dengan topping gurih krim keju</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">23</span>
-              </div>
-            </div>
-
-            <!-- Item: Cheezy Chocolate -->
-            <div class="menu-item-row" data-name="Cheezy Chocolate">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Cheezy Chocolate</span>
-                </div>
-                <span class="item-sub">Cokelat pekat rich berpadu foam keju tebal</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">25</span>
-              </div>
-            </div>
-
-            <!-- Item: Strawberry Matcha -->
-            <div class="menu-item-row featured-row" data-name="Strawberry Matcha">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/strawberry matcha.png" alt="Strawberry Matcha" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Strawberry Matcha</span>
+                <div class="name-badge-group">
+                  <span class="item-name">Strawberry Matcha</span>
                   <span class="badge-pill pill-pink">BEST SELLER</span>
                 </div>
-                <span class="item-sub">Layer mewah matcha pekat dan sari stroberi manis asam</span>
               </div>
-              <div class="item-price-box">
-                <span class="price-val text-pink">23</span>
-              </div>
+              <span class="item-note pl-thumb">Layer mewah matcha pekat dan sari stroberi manis asam</span>
             </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= 4. TEA SERIES =================
-           Overlay Background: catalog drink 1.png (Teas & Glasses)
-           Cutout Thumbnails: drink 5 remove bg.png
-      ================================================== -->
-      <section class="menu-catalog-card scroll-fade-card" id="tea-series" style="--catalog-overlay: url('assets/images/drink/catalog drink 1.png');">
-        <div class="card-bg-overlay"></div>
-
-        <div class="card-inner-content">
-          <div class="catalog-header-block">
-            <div class="header-text-left">
-              <span class="catalog-badge-sub">REFRESHING BREW</span>
-              <h2 class="catalog-title">TEA SERIES</h2>
-            </div>
-            <span class="catalog-ambient-tag">Pure Leaves</span>
-          </div>
-
-          <p class="catalog-desc">Teh seduh wangi untuk pelepas dahaga di siang dan sore hari.</p>
-
-          <div class="catalog-item-list">
-
-            <!-- Item: Lemontea -->
-            <div class="menu-item-row featured-row" data-name="Lemontea">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/drink 5 remove bg.png" alt="Lemontea" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Lemontea <span class="tag-variant">Ice / Hot</span></span>
-                </div>
-                <span class="item-sub">Perasan lemon segar berpadu teh berkualitas</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val text-blue">20</span>
-              </div>
-            </div>
-
-            <!-- Item: Lychee Tea -->
-            <div class="menu-item-row featured-row" data-name="Lychee Tea">
-              <div class="item-thumb-box">
-                <img src="assets/images/drink/drink 5 remove bg.png" alt="Lychee Tea" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Lychee Tea</span>
-                  <span class="badge-pill pill-blue">SEGAR</span>
-                </div>
-                <span class="item-sub">Teh wangi dengan buah leci manis menyegarkan</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val text-blue">22</span>
-              </div>
-            </div>
-
-            <!-- Item: Ice Tea -->
-            <div class="menu-item-row" data-name="Ice Tea">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Ice Tea</span>
-                </div>
-                <span class="item-sub">Es teh manis klasik aroma melati yang menenangkan</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">15</span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Addons Box -->
-          <div class="catalog-addon-box">
-            <span class="addon-title">ADDITIONAL:</span>
-            <div class="addon-chip-group">
-              <span class="addon-chip">Espresso Shot <strong>7</strong></span>
-              <span class="addon-chip">Air Mineral <strong>10</strong></span>
-              <span class="addon-chip">Ice + Cup <strong>3</strong></span>
+            <div class="item-right">
+              <span class="item-price text-pink">23</span>
             </div>
           </div>
 
         </div>
       </section>
 
-      <!-- ================= 5. CORAL KITCHEN (FOOD / MEALS) =================
-           Overlay Background: cicken katsu n nasi gila.png (Luscious Rice Bowls & Katsu)
-           Cutout Thumbnails: bakmi chili oil.png, pangsit chili oil.png, nasi gila.png
-      ==================================================================== -->
-      <section class="menu-catalog-card scroll-fade-card" id="coral-kitchen" style="--catalog-overlay: url('assets/images/food/cicken katsu n nasi gila.png');">
-        <div class="card-bg-overlay"></div>
+      <!-- ================= 4. TEA SERIES ================= -->
+      <section class="editorial-section" id="tea-series">
+        <div class="section-heading-box">
+          <h2 class="editorial-title">TEA SERIES</h2>
+          <div class="title-underline underline-pink"></div>
+        </div>
+        <p class="section-desc">Teh seduh wangi untuk pelepas dahaga di siang dan sore hari.</p>
 
-        <div class="card-inner-content">
-          <div class="catalog-header-block">
-            <div class="header-text-left">
-              <span class="catalog-badge-sub text-pink-sub">HOT MEALS & MAINS</span>
-              <h2 class="catalog-title">CORAL KITCHEN</h2>
+        <div class="editorial-table">
+
+          <!-- Lemontea -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <span class="item-name">Lemontea <span class="variant-tag">Ice / Hot</span></span>
+              <span class="item-note">Perasan lemon segar berpadu teh berkualitas</span>
             </div>
-            <span class="catalog-ambient-tag">Chef's Kitchen</span>
+            <div class="item-right">
+              <span class="item-price text-blue">20</span>
+            </div>
           </div>
 
-          <p class="catalog-desc">Menu makanan utama hangat, mengenyangkan, dan kaya bumbu gurih.</p>
-
-          <div class="catalog-item-list">
-
-            <!-- Item: Spaghetti Carbonara -->
-            <div class="menu-item-row" data-name="Spaghetti Carbonara">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Spaghetti Carbonara</span>
-                </div>
-                <span class="item-sub">Creamy sauce dengan smoked beef & taburan keju</span>
+          <!-- Lychee Tea -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-badge-group">
+                <span class="item-name">Lychee Tea</span>
+                <span class="badge-pill pill-blue">SEGAR</span>
               </div>
-              <div class="item-price-box">
-                <span class="price-val">28</span>
-              </div>
+              <span class="item-note">Teh wangi dengan buah leci manis menyegarkan</span>
             </div>
-
-            <!-- Item: Spaghetti Bolognese -->
-            <div class="menu-item-row" data-name="Spaghetti Bolognese">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Spaghetti Bolognese</span>
-                </div>
-                <span class="item-sub">Pasta klasik dengan saus daging sapi cincang gurih</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">27</span>
-              </div>
+            <div class="item-right">
+              <span class="item-price text-blue">22</span>
             </div>
+          </div>
 
-            <!-- Item: Chicken Katsu BBQ -->
-            <div class="menu-item-row" data-name="Chicken Katsu BBQ">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Chicken Katsu BBQ</span>
-                </div>
-                <span class="item-sub">Ayam katsu krispi saus barbekyu gurih manis</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">29</span>
-              </div>
+          <!-- Ice Tea -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Ice Tea</span>
+              <span class="item-note">Es teh manis klasik aroma melati yang menenangkan</span>
             </div>
-
-            <!-- Item: Chicken Katsu Matah -->
-            <div class="menu-item-row featured-row" data-name="Chicken Katsu Matah">
-              <div class="item-thumb-box">
-                <img src="assets/images/food/bakmi chili oil.png" alt="Chicken Katsu Matah" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Chicken Katsu Matah</span>
-                  <span class="badge-pill pill-pink">🔥 FAVORIT</span>
-                </div>
-                <span class="item-sub">Katsu krispi renyah disiram sambal matah wangi pedas</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val text-pink">29</span>
-              </div>
+            <div class="item-right">
+              <span class="item-price">15</span>
             </div>
+          </div>
 
-            <!-- Item: Nasi Gila -->
-            <div class="menu-item-row featured-row" data-name="Nasi Gila">
-              <div class="item-thumb-box">
-                <img src="assets/images/food/nasi gila.png" alt="Nasi Gila" class="thumb-cutout shake-trigger" loading="lazy">
+        </div>
+
+        <!-- Additional Box -->
+        <div class="additional-box">
+          <span class="add-label">ADDITIONAL:</span>
+          <div class="add-pill-group">
+            <span class="add-chip">Espresso Shot <strong>7</strong></span>
+            <span class="add-chip">Air Mineral <strong>10</strong></span>
+            <span class="add-chip">Ice + Cup <strong>3</strong></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ATMOSPHERIC MID-PAGE OVERLAY BANNER =================
+           Foto besar non-remove-bg sebagai dekorasi visual gelap sinematik (sesuai referensi user)
+      ======================================================================== -->
+      <section class="ambient-photo-banner mid-overlay-banner" style="--ambient-bg: url('assets/images/food/cicken katsu n nasi gila.png');">
+        <div class="banner-dim-overlay"></div>
+        <div class="banner-inner">
+          <span class="banner-tag">CORAL KITCHEN</span>
+          <h3 class="banner-quote-title">“Good Food, Warm Space, Great Stories.”</h3>
+          <p class="banner-quote-sub">Nikmati hidangan hangat dan camilan renyah teman ngopi santai Anda.</p>
+        </div>
+      </section>
+
+      <!-- ================= 5. CORAL KITCHEN (FOOD / MEALS) ================= -->
+      <section class="editorial-section" id="coral-kitchen">
+        <div class="section-heading-box">
+          <h2 class="editorial-title">CORAL KITCHEN</h2>
+          <div class="title-underline underline-pink"></div>
+        </div>
+        <p class="section-desc">Menu makanan utama hangat, mengenyangkan, dan kaya bumbu gurih.</p>
+
+        <div class="editorial-table">
+
+          <!-- Spaghetti Carbonara -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Spaghetti Carbonara</span>
+              <span class="item-note">Creamy sauce dengan smoked beef & taburan keju</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">28</span>
+            </div>
+          </div>
+
+          <!-- Spaghetti Bolognese -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Spaghetti Bolognese</span>
+              <span class="item-note">Pasta klasik dengan saus daging sapi cincang gurih</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">27</span>
+            </div>
+          </div>
+
+          <!-- Chicken Katsu BBQ -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Chicken Katsu BBQ</span>
+              <span class="item-note">Ayam katsu krispi saus barbekyu gurih manis</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">29</span>
+            </div>
+          </div>
+
+          <!-- Chicken Katsu Matah -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-badge-group">
+                <span class="item-name">Chicken Katsu Matah</span>
+                <span class="badge-pill pill-pink">🔥 FAVORIT</span>
               </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Nasi Gila</span>
+              <span class="item-note">Katsu krispi renyah disiram sambal matah wangi pedas</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price text-pink">29</span>
+            </div>
+          </div>
+
+          <!-- Nasi Gila (MATCHED ASSET: nasi gila.png) -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-with-thumb">
+                <!-- Thumbnail kecil tipis di samping menu -->
+                <div class="thumb-mini-box">
+                  <img src="assets/images/food/nasi gila.png" alt="Nasi Gila" class="thumb-cutout shake-on-tap" loading="lazy">
+                </div>
+                <div class="name-badge-group">
+                  <span class="item-name">Nasi Gila</span>
                   <span class="badge-pill pill-blue">KENYANG</span>
                 </div>
-                <span class="item-sub">Nasi gurih dengan tumisan sosis, bakso, telur bumbu mantap</span>
               </div>
-              <div class="item-price-box">
-                <span class="price-val text-blue">25</span>
-              </div>
+              <span class="item-note pl-thumb">Nasi gurih dengan tumisan sosis, bakso, telur bumbu mantap</span>
             </div>
+            <div class="item-right">
+              <span class="item-price text-blue">25</span>
+            </div>
+          </div>
 
-            <!-- Item: Bakmie Chili Oil -->
-            <div class="menu-item-row featured-row" data-name="Bakmie Chili Oil">
-              <div class="item-thumb-box">
-                <img src="assets/images/food/bakmi chili oil.png" alt="Bakmie Chili Oil" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Bakmie Chili Oil</span>
+          <!-- Bakmie Chili Oil (MATCHED ASSET: bakmi chili oil.png) -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-with-thumb">
+                <!-- Thumbnail kecil tipis di samping menu -->
+                <div class="thumb-mini-box">
+                  <img src="assets/images/food/bakmi chili oil.png" alt="Bakmie Chili Oil" class="thumb-cutout shake-on-tap" loading="lazy">
+                </div>
+                <div class="name-badge-group">
+                  <span class="item-name">Bakmie Chili Oil</span>
                   <span class="badge-pill pill-pink">⭐ MUST TRY</span>
                 </div>
-                <span class="item-sub">Mie kenyal gurih berbalur chili oil wangi rempah khas</span>
               </div>
-              <div class="item-price-box">
-                <span class="price-val text-pink">27</span>
-              </div>
+              <span class="item-note pl-thumb">Mie kenyal gurih berbalur chili oil wangi rempah khas</span>
             </div>
-
+            <div class="item-right">
+              <span class="item-price text-pink">27</span>
+            </div>
           </div>
+
         </div>
       </section>
 
-      <!-- ================= 6. SNACKS & DESSERT =================
-           Overlay Background: catalog 1.png (Dimsum & Crispy Platter feast)
-           Cutout Thumbnails: mix plater.png, burger n fries.png, pangsit chili oil.png, risol.png
-      ========================================================== -->
-      <section class="menu-catalog-card scroll-fade-card" id="snacks-dessert" style="--catalog-overlay: url('assets/images/food/catalog 1.png');">
-        <div class="card-bg-overlay"></div>
+      <!-- ================= 6. SNACKS & BITES ================= -->
+      <section class="editorial-section" id="snacks-bites">
+        <div class="section-heading-box">
+          <h2 class="editorial-title">SNACKS & BITES</h2>
+          <div class="title-underline underline-blue"></div>
+        </div>
+        <p class="section-desc">Camilan renyah teman ngobrol, nongkrong, atau penutup manis.</p>
 
-        <div class="card-inner-content">
-          <div class="catalog-header-block">
-            <div class="header-text-left">
-              <span class="catalog-badge-sub">CRISPY & SWEET</span>
-              <h2 class="catalog-title">SNACKS & BITES</h2>
-            </div>
-            <span class="catalog-ambient-tag">Best for Sharing</span>
-          </div>
+        <div class="editorial-table">
 
-          <p class="catalog-desc">Camilan renyah teman ngobrol, nongkrong, atau penutup manis.</p>
-
-          <div class="catalog-item-list">
-
-            <!-- Item: Mix Platter -->
-            <div class="menu-item-row featured-row" data-name="Mix Platter">
-              <div class="item-thumb-box">
-                <img src="assets/images/food/mix plater.png" alt="Mix Platter" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Mix Platter</span>
+          <!-- Mix Platter (MATCHED ASSET: mix plater.png) -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-with-thumb">
+                <!-- Thumbnail kecil tipis di samping menu -->
+                <div class="thumb-mini-box">
+                  <img src="assets/images/food/mix plater.png" alt="Mix Platter" class="thumb-cutout shake-on-tap" loading="lazy">
+                </div>
+                <div class="name-badge-group">
+                  <span class="item-name">Mix Platter</span>
                   <span class="badge-pill pill-pink">SHARING</span>
                 </div>
-                <span class="item-sub">Kombinasi kentang, sosis, dan camilan renyah bareng teman</span>
               </div>
-              <div class="item-price-box">
-                <span class="price-val text-pink">25</span>
-              </div>
+              <span class="item-note pl-thumb">Kombinasi kentang, sosis, dan camilan renyah bareng teman</span>
             </div>
+            <div class="item-right">
+              <span class="item-price text-pink">25</span>
+            </div>
+          </div>
 
-            <!-- Item: Pangsit Chili Oil -->
-            <div class="menu-item-row featured-row" data-name="Pangsit Chili Oil">
-              <div class="item-thumb-box">
-                <img src="assets/images/food/pangsit chili oil.png" alt="Pangsit Chili Oil" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Pangsit Chili Oil</span>
+          <!-- Pangsit Chili Oil (MATCHED ASSET: pangsit chili oil.png) -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-with-thumb">
+                <!-- Thumbnail kecil tipis di samping menu -->
+                <div class="thumb-mini-box">
+                  <img src="assets/images/food/pangsit chili oil.png" alt="Pangsit Chili Oil" class="thumb-cutout shake-on-tap" loading="lazy">
+                </div>
+                <div class="name-badge-group">
+                  <span class="item-name">Pangsit Chili Oil</span>
                   <span class="badge-pill pill-blue">🔥 GURIH PEDAS</span>
                 </div>
-                <span class="item-sub">Pangsit lembut juicy disiram saus chili oil pekat</span>
               </div>
-              <div class="item-price-box">
-                <span class="price-val text-blue">20</span>
-              </div>
+              <span class="item-note pl-thumb">Pangsit lembut juicy disiram saus chili oil pekat</span>
             </div>
-
-            <!-- Item: Cireng Rujak -->
-            <div class="menu-item-row" data-name="Cireng Rujak">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Cireng Rujak</span>
-                </div>
-                <span class="item-sub">Cireng krispi kenyal dengan bumbu rujak pedas manis</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">15</span>
-              </div>
+            <div class="item-right">
+              <span class="item-price text-blue">20</span>
             </div>
-
-            <!-- Item: French Fries -->
-            <div class="menu-item-row featured-row" data-name="French Fries">
-              <div class="item-thumb-box">
-                <img src="assets/images/food/burger n fries.png" alt="French Fries" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">French Fries</span>
-                </div>
-                <span class="item-sub">Kentang goreng renyah bumbu gurih asin</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">19</span>
-              </div>
-            </div>
-
-            <!-- Item: Donat Tiramissyou -->
-            <div class="menu-item-row featured-row" data-name="Donat Tiramissyou">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Donat Tiramissyou</span>
-                  <span class="badge-pill pill-pink">SWEET</span>
-                </div>
-                <span class="item-sub">Donat lembut lumer dengan cream tiramisu wangi</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val text-pink">18</span>
-              </div>
-            </div>
-
-            <!-- Item: Basreng -->
-            <div class="menu-item-row" data-name="Basreng">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Basreng</span>
-                </div>
-                <span class="item-sub">Baso goreng renyah bumbu pedas gurih daun jeruk</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">18</span>
-              </div>
-            </div>
-
-            <!-- Item: Baso Aci -->
-            <div class="menu-item-row" data-name="Baso Aci">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Baso Aci</span>
-                </div>
-                <span class="item-sub">Baso aci kenyal gurih dengan kuah rempah pedas segar</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">23</span>
-              </div>
-            </div>
-
-            <!-- Item: Ice Cream Toast -->
-            <div class="menu-item-row featured-row" data-name="Ice Cream Toast">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Ice Cream Toast</span>
-                  <span class="badge-pill pill-pink">DESSERT</span>
-                </div>
-                <span class="item-sub">Roti panggang mentega hangat dengan es krim lumer</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val text-pink">23</span>
-              </div>
-            </div>
-
-            <!-- Item: Cireng Ayam Suwir -->
-            <div class="menu-item-row" data-name="Cireng Ayam Suwir">
-              <div class="item-info-box pl-thumb">
-                <div class="item-name-wrap">
-                  <span class="item-title">Cireng Ayam Suwir</span>
-                </div>
-                <span class="item-sub">Cireng isi ayam suwir pedas bumbu gurih</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">18</span>
-              </div>
-            </div>
-
-            <!-- Item: Risol Rogout -->
-            <div class="menu-item-row featured-row" data-name="Risol Rogout">
-              <div class="item-thumb-box">
-                <img src="assets/images/food/risol.png" alt="Risol Rogout" class="thumb-cutout shake-trigger" loading="lazy">
-              </div>
-              <div class="item-info-box">
-                <div class="item-name-wrap">
-                  <span class="item-title">Risol Rogout</span>
-                </div>
-                <span class="item-sub">Risol kulit garing dengan isian creamy daging & sayur</span>
-              </div>
-              <div class="item-price-box">
-                <span class="price-val">20</span>
-              </div>
-            </div>
-
           </div>
+
+          <!-- Cireng Rujak -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Cireng Rujak</span>
+              <span class="item-note">Cireng krispi kenyal dengan bumbu rujak pedas manis</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">15</span>
+            </div>
+          </div>
+
+          <!-- French Fries -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">French Fries</span>
+              <span class="item-note">Kentang goreng renyah bumbu gurih asin</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">19</span>
+            </div>
+          </div>
+
+          <!-- Donat Tiramissyou -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-badge-group">
+                <span class="item-name">Donat Tiramissyou</span>
+                <span class="badge-pill pill-pink">SWEET</span>
+              </div>
+              <span class="item-note">Donat lembut lumer dengan cream tiramisu wangi</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price text-pink">18</span>
+            </div>
+          </div>
+
+          <!-- Basreng -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Basreng</span>
+              <span class="item-note">Baso goreng renyah bumbu pedas gurih daun jeruk</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">18</span>
+            </div>
+          </div>
+
+          <!-- Baso Aci -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Baso Aci</span>
+              <span class="item-note">Baso aci kenyal gurih dengan kuah rempah pedas segar</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">23</span>
+            </div>
+          </div>
+
+          <!-- Ice Cream Toast -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-badge-group">
+                <span class="item-name">Ice Cream Toast</span>
+                <span class="badge-pill pill-pink">DESSERT</span>
+              </div>
+              <span class="item-note">Roti panggang mentega hangat dengan es krim lumer</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price text-pink">23</span>
+            </div>
+          </div>
+
+          <!-- Cireng Ayam Suwir -->
+          <div class="menu-item-row">
+            <div class="item-left">
+              <span class="item-name">Cireng Ayam Suwir</span>
+              <span class="item-note">Cireng isi ayam suwir pedas bumbu gurih</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">18</span>
+            </div>
+          </div>
+
+          <!-- Risol Rogout (MATCHED ASSET: risol.png) -->
+          <div class="menu-item-row featured-row">
+            <div class="item-left">
+              <div class="name-with-thumb">
+                <!-- Thumbnail kecil tipis di samping menu -->
+                <div class="thumb-mini-box">
+                  <img src="assets/images/food/risol.png" alt="Risol Rogout" class="thumb-cutout shake-on-tap" loading="lazy">
+                </div>
+                <div class="name-badge-group">
+                  <span class="item-name">Risol Rogout</span>
+                </div>
+              </div>
+              <span class="item-note pl-thumb">Risol kulit garing dengan isian creamy daging & sayur</span>
+            </div>
+            <div class="item-right">
+              <span class="item-price">20</span>
+            </div>
+          </div>
+
         </div>
       </section>
 

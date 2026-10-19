@@ -56,7 +56,7 @@ function triggerDeliciousShake(img) {
  * 2. Scroll-Driven Fade-In & Fade-Out for Catalog Cards
  */
 function initScrollFadeEffects() {
-  const cards = document.querySelectorAll('.scroll-fade-card');
+  const cards = document.querySelectorAll('.scroll-fade-section');
   if (!cards.length) return;
 
   const observerOptions = {
@@ -186,7 +186,7 @@ function playBubblePopSound() {
  */
 function initCategoryNavSync() {
   const pills = document.querySelectorAll('.cat-pill');
-  const sections = document.querySelectorAll('.menu-catalog-card');
+  const sections = document.querySelectorAll('.editorial-section');
   const track = document.getElementById('categoryTrack');
 
   pills.forEach(pill => {

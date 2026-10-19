@@ -618,24 +618,27 @@ body {
   border: 1px solid var(--coral-blue-border);
 }
 
-/* Additional & Extra Box */
+/* Additional & Extra Box (Lebar Penuh Kanan-Kiri) */
 .additional-box {
-  margin-top: 14px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  margin-top: 18px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--coral-blue-border);
-  border-radius: 12px;
-  padding: 10px 12px;
-  box-shadow: 0 2px 8px rgba(18, 108, 252, 0.05);
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 14px rgba(18, 108, 252, 0.05);
+  position: relative;
+  z-index: 2;
 }
 
 .add-label {
-  font-size: 0.68rem;
+  font-size: 0.70rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   color: var(--coral-electric-blue);
-  margin-bottom: 7px;
+  margin-bottom: 9px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -654,20 +657,23 @@ body {
 .add-pill-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
 .add-chip {
+  flex: 1 1 calc(33.333% - 8px);
+  min-width: 95px;
   font-size: 0.74rem;
   font-weight: 600;
   background: #FFFFFF;
   color: var(--text-main);
-  padding: 4px 10px;
+  padding: 5px 10px;
   border-radius: 999px;
   border: 1px solid var(--border-subtle);
   display: inline-flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 

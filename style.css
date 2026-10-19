@@ -95,7 +95,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-bottom: 75px; /* Space for floating crave dock */
+  padding-bottom: 24px;
 }
 
 /* =========================================================
@@ -224,54 +224,7 @@ body {
   color: var(--text-muted);
   font-style: italic;
   margin-top: 5px;
-  margin-bottom: 14px;
-}
-
-/* Facility Row */
-.facility-row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.facility-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.70rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  background: #FFFFFF;
-  padding: 4px 11px;
-  border-radius: 8px;
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 1px 3px rgba(18, 108, 252, 0.04);
-}
-
-.facility-chip svg {
-  width: 12px;
-  height: 12px;
-  color: var(--coral-electric-blue);
-}
-
-.interactive-hint {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.70rem;
-  font-weight: 600;
-  color: var(--text-main);
-  background: #FFFFFF;
-  padding: 5px 14px;
-  border-radius: 999px;
-  box-shadow: 0 4px 12px rgba(18, 108, 252, 0.06);
-  border: 1px solid var(--coral-pink-border);
-}
-
-.hint-sparkle {
-  color: var(--coral-bubble-pink);
+  margin-bottom: 0;
 }
 
 /* =========================================================
@@ -657,73 +610,6 @@ body {
   font-weight: 800;
   color: var(--coral-bubble-pink);
   margin-left: 3px;
-}
-
-/* =========================================================
-   Floating Crave Dock
-   ========================================================= */
-.floating-crave-dock {
-  position: fixed;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 24px);
-  max-width: calc(var(--max-width) - 24px);
-  z-index: 100;
-}
-
-.dock-inner {
-  background: rgba(14, 26, 45, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 9px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(200, 220, 252, 0.2);
-  box-shadow: 0 10px 25px rgba(18, 108, 252, 0.22);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.crave-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: linear-gradient(135deg, var(--coral-bubble-pink) 0%, #E83F88 100%);
-  color: #FFFFFF;
-  border: none;
-  padding: 7px 16px;
-  border-radius: 999px;
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(252, 102, 162, 0.45);
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.crave-btn:active {
-  transform: scale(0.92);
-}
-
-.crave-counter {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  letter-spacing: 0.01em;
-}
-
-.crave-particle {
-  position: fixed;
-  pointer-events: none;
-  font-size: 1.2rem;
-  z-index: 999;
-  animation: floatUpBurst 0.9s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
-}
-
-@keyframes floatUpBurst {
-  0% { transform: translateY(0) scale(0.5); opacity: 1; }
-  100% { transform: translateY(-70px) scale(1.4); opacity: 0; }
 }
 
 /* =========================================================

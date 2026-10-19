@@ -10,7 +10,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initScrollSlideEffects();
   initCategoryNavSync();
-  initCraveMeter();
   initMascotFun();
 });
 
@@ -177,36 +176,7 @@ function centerPill(pill, track) {
   });
 }
 
-/**
- * 5. Floating Crave Counter & Reaction Burst
- */
-function initCraveMeter() {
-  const craveBtn = document.getElementById('craveBtn');
-  const craveCount = document.getElementById('craveCount');
-  if (!craveBtn || !craveCount) return;
 
-  let count = 142;
-  const emojis = ['❤️', '🔥', '☕', '✨', '😋', '🥤', '🍜'];
-
-  craveBtn.addEventListener('click', () => {
-    count++;
-    craveCount.textContent = `${count} orang ngiler hari ini 🔥`;
-    playBubblePopSound();
-
-    const rect = craveBtn.getBoundingClientRect();
-    const particle = document.createElement('div');
-    particle.className = 'crave-particle';
-    particle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-    particle.style.left = `${rect.left + rect.width / 2 + (Math.random() * 40 - 20)}px`;
-    particle.style.top = `${rect.top - 10}px`;
-
-    document.body.appendChild(particle);
-
-    setTimeout(() => {
-      particle.remove();
-    }, 900);
-  });
-}
 
 /**
  * 6. Mascot Fun Interaction

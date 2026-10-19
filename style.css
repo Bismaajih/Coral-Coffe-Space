@@ -300,18 +300,18 @@ body {
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 60%;
+  height: 65%;
   background-image: var(--bg-ambient);
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  opacity: 0.24;
+  opacity: 0.42;
   pointer-events: none;
   z-index: 0;
-  /* Gradien transparan ke atas: dari bawah jelas, memudar halus ke atas hingga 100% transparan */
-  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.3) 55%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.3) 55%, rgba(0, 0, 0, 0) 100%);
-  filter: saturate(1.15) contrast(1.02);
+  /* Gradien transparan ke atas: dari bawah tampak jelas & menggiurkan, memudar halus ke atas */
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.15) 80%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.15) 80%, rgba(0, 0, 0, 0) 100%);
+  filter: saturate(1.22) contrast(1.06);
   transition: opacity 0.3s ease;
 }
 
@@ -375,8 +375,54 @@ body {
   height: auto;
   aspect-ratio: 1 / 1.15;
   object-fit: contain;
-  filter: drop-shadow(0 12px 18px rgba(16, 36, 62, 0.14));
+  filter: drop-shadow(0 12px 18px rgba(18, 108, 252, 0.12));
   transition: filter 0.3s ease;
+  will-change: transform;
+}
+
+/* =========================================================
+   Mode Stay Gentle Ambient Motion (Mulus & Pelan Saja)
+   ========================================================= */
+@keyframes gentleStayFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0.4deg);
+  }
+}
+
+@keyframes gentleStayFloatAlt {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-0.4deg);
+  }
+}
+
+/* Khusus foto bertangan: gerak vertikal murni agar pergelangan tetap menempel rata di batas kiri */
+@keyframes gentleStayFloatFlush {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.slide-active .product-cutout-img {
+  animation: gentleStayFloat 5.2s ease-in-out infinite;
+}
+
+.layout-img-right .slide-active .product-cutout-img {
+  animation: gentleStayFloatAlt 5.6s ease-in-out infinite;
+  animation-delay: -2.4s;
+}
+
+.slide-active.hand-flush-left .product-cutout-img {
+  animation: gentleStayFloatFlush 5.2s ease-in-out infinite;
+  transform-origin: left bottom;
 }
 
 /* =========================================================
@@ -572,22 +618,37 @@ body {
   border: 1px solid var(--coral-blue-border);
 }
 
-/* Additional Box */
+/* Additional & Extra Box */
 .additional-box {
   margin-top: 14px;
-  background: #FFFFFF;
-  border: 1px dashed var(--border-dashed);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--coral-blue-border);
+  border-radius: 12px;
   padding: 10px 12px;
+  box-shadow: 0 2px 8px rgba(18, 108, 252, 0.05);
 }
 
 .add-label {
   font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-  display: block;
+  letter-spacing: 0.06em;
+  color: var(--coral-electric-blue);
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+}
+
+.add-label::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--coral-bubble-pink);
 }
 
 .add-pill-group {
@@ -597,19 +658,27 @@ body {
 }
 
 .add-chip {
-  font-size: 0.72rem;
-  background: var(--canvas-bg);
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: #FFFFFF;
   color: var(--text-main);
-  padding: 3px 8px;
-  border-radius: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
   border: 1px solid var(--border-subtle);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
 .add-chip strong {
   font-family: var(--font-display);
   font-weight: 800;
-  color: var(--coral-bubble-pink);
-  margin-left: 3px;
+  color: var(--coral-electric-blue);
+  background: var(--coral-blue-soft);
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-size: 0.70rem;
 }
 
 /* =========================================================

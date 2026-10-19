@@ -318,6 +318,11 @@ body {
   gap: 14px;
   position: relative;
   z-index: 2;
+  margin-bottom: 22px;
+}
+
+.editorial-row:last-child {
+  margin-bottom: 0;
 }
 
 .layout-img-left {
@@ -341,12 +346,23 @@ body {
   z-index: 3;
 }
 
+/* Penyesuaian khusus untuk foto bertangan agar pas dengan batas web (tidak terpotong) */
+.hand-flush-left {
+  margin-left: -16px;
+  flex: 0 0 calc(35% + 16px);
+  max-width: calc(35% + 16px);
+}
+
+.hand-flush-left .product-cutout-img {
+  object-position: left center;
+  transform-origin: left center;
+}
+
 .visual-interactive-box {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
   user-select: none;
 }
 
@@ -355,81 +371,56 @@ body {
   height: auto;
   aspect-ratio: 1 / 1.15;
   object-fit: contain;
-  filter: drop-shadow(0 14px 18px rgba(16, 36, 62, 0.14));
+  filter: drop-shadow(0 12px 18px rgba(16, 36, 62, 0.14));
   transition: filter 0.3s ease;
-  animation: ambientFloat 4.5s ease-in-out infinite;
-  transform-origin: center bottom;
 }
 
-@keyframes ambientFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(1deg); }
-}
-
-/* Shake Animation on Tap ("Sedikit Dishake") */
-.product-cutout-img:hover {
-  filter: drop-shadow(0 18px 22px rgba(228, 75, 102, 0.3));
-}
-
-.product-cutout-img:active,
-.product-cutout-img.is-shaking {
-  animation: deliciousShake 0.65s cubic-bezier(0.36, 0.07, 0.19, 0.97) both !important;
-}
-
-@keyframes deliciousShake {
-  0% { transform: scale(1) rotate(0deg); }
-  15% { transform: scale(1.08) rotate(-5deg); }
-  30% { transform: scale(1.06) rotate(4deg); }
-  45% { transform: scale(1.04) rotate(-3deg); }
-  60% { transform: scale(1.02) rotate(2deg); }
-  75% { transform: scale(1.01) rotate(-1deg); }
-  100% { transform: scale(1) rotate(0deg); }
-}
-
-.tap-hint-pill {
-  margin-top: 6px;
-  font-size: 0.62rem;
-  font-weight: 700;
-  color: var(--coral-hot);
-  background: var(--coral-soft);
-  border: 1px solid var(--coral-border);
-  padding: 3px 8px;
-  border-radius: 999px;
-  white-space: nowrap;
-  letter-spacing: 0.02em;
-  opacity: 0.9;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.visual-interactive-box:hover .tap-hint-pill,
-.visual-interactive-box:active .tap-hint-pill {
-  opacity: 1;
-  transform: scale(1.05);
-  background: var(--coral-hot);
-  color: #FFFFFF;
-}
-
-/* Scroll-Driven Appearance on Visual Column */
-.scroll-fade-elem {
+/* =========================================================
+   Scroll-Driven Slide & Fade In/Out (Tanpa Goyang)
+   - Saat scroll masuk: slide perlahan & fade in
+   - Saat di viewport: tampak jernih 100%
+   - Saat scroll lewat: menghilang slide out & fade out
+   ========================================================= */
+.scroll-slide-elem {
   opacity: 0;
-  transform: translateY(28px) scale(0.94);
-  filter: blur(3px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform, filter;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
-.scroll-fade-elem.is-visible {
+/* Image on Left */
+.layout-img-left .scroll-slide-elem.slide-below,
+.scroll-slide-elem.slide-below {
+  opacity: 0;
+  transform: translate3d(-18px, 24px, 0) scale(0.95);
+}
+
+.layout-img-left .scroll-slide-elem.slide-active,
+.scroll-slide-elem.slide-active {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0px);
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
-.scroll-fade-elem.is-scrolled-past {
-  opacity: 0.25;
-  transform: translateY(-22px) scale(0.96);
-  filter: blur(2px);
+.layout-img-left .scroll-slide-elem.slide-above,
+.scroll-slide-elem.slide-above {
+  opacity: 0;
+  transform: translate3d(-18px, -24px, 0) scale(0.95);
+}
+
+/* Image on Right */
+.layout-img-right .scroll-slide-elem.slide-below {
+  opacity: 0;
+  transform: translate3d(18px, 24px, 0) scale(0.95);
+}
+
+.layout-img-right .scroll-slide-elem.slide-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.layout-img-right .scroll-slide-elem.slide-above {
+  opacity: 0;
+  transform: translate3d(18px, -24px, 0) scale(0.95);
 }
 
 /* Product Text Column */

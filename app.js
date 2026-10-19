@@ -1,138 +1,68 @@
 /**
  * Coral Coffee Space — Menu & Interaction Script
  * Features:
- * 1. Image Shake / Jiggle on cutout tap & scroll entrance
- * 2. Scroll-Driven Fade-In & Fade-Out for Cutout Images
- * 3. Synthetic Audio Feedback (Web Audio API)
- * 4. Sticky Category Nav Sync
- * 5. Floating Crave Counter & Reaction Burst
+ * 1. Scroll-Driven Slide & Fade In/Out for Cutout Images (smooth scroll entrance & exit)
+ * 2. Synthetic Audio Feedback (Web Audio API)
+ * 3. Sticky Category Nav Sync
+ * 4. Floating Crave Counter & Reaction Burst
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initProductImageShake();
-  initScrollFadeEffects();
+  initScrollSlideEffects();
   initCategoryNavSync();
   initCraveMeter();
   initMascotFun();
 });
 
 /**
- * 1. Product Cutout Image Shake on Tap / Click
+ * 1. Scroll-Driven Slide & Fade In/Out for Cutout Images
+ * - Saat scroll awal masuk: slide perlahan & fade in
+ * - Saat berada di viewport: tampak jernih 100%
+ * - Saat scroll ke bawah lagi: menghilang slide out & fade out
+ * - Saat scroll balik ke atas: muncul kembali dengan halus
  */
-function initProductImageShake() {
-  const visualBoxes = document.querySelectorAll('.visual-interactive-box');
+function initScrollSlideEffects() {
+  const slideElements = document.querySelectorAll('.scroll-slide-elem');
+  if (!slideElements.length) return;
 
-  visualBoxes.forEach(box => {
-    const img = box.querySelector('.product-cutout-img');
+  function updateSlidePositions() {
+    const vh = window.innerHeight;
+    const enterThreshold = vh * 0.90;
+    const exitThreshold = 75;
 
-    box.addEventListener('click', () => {
-      if (img) {
-        triggerDeliciousShake(img);
-      }
-      playBubblePopSound();
-    });
-
-    box.addEventListener('touchstart', () => {
-      if (img) {
-        triggerDeliciousShake(img);
-      }
-      playBubblePopSound();
-    }, { passive: true });
-  });
-}
-
-function triggerDeliciousShake(img) {
-  if (!img) return;
-  img.classList.remove('is-shaking');
-  void img.offsetWidth; // Force reflow
-  img.classList.add('is-shaking');
-
-  setTimeout(() => {
-    img.classList.remove('is-shaking');
-  }, 700);
-}
-
-/**
- * 2. Scroll-Driven Fade-In & Fade-Out for Cutout Images
- */
-function initScrollFadeEffects() {
-  const fadeElements = document.querySelectorAll('.scroll-fade-elem');
-  if (!fadeElements.length) return;
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '-5% 0px -10% 0px',
-    threshold: [0, 0.2, 0.6, 1.0]
-  };
-
-  const hasEnteredOnce = new WeakSet();
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const el = entry.target;
+    slideElements.forEach(el => {
       const rect = el.getBoundingClientRect();
-      const vh = window.innerHeight;
 
-      if (entry.isIntersecting) {
-        el.classList.add('is-visible');
-        el.classList.remove('is-scrolled-past');
-
-        // Playful subtle shake on first entrance
-        if (!hasEnteredOnce.has(el)) {
-          hasEnteredOnce.add(el);
-          const img = el.querySelector('.product-cutout-img');
-          if (img) {
-            setTimeout(() => {
-              triggerDeliciousShake(img);
-            }, 300);
-          }
-        }
+      if (rect.bottom < exitThreshold) {
+        // Scroll lewat ke atas: slide out & fade out
+        el.classList.remove('slide-active', 'slide-below');
+        el.classList.add('slide-above');
+      } else if (rect.top > enterThreshold) {
+        // Belum sampai (di bawah layar): siap untuk slide in
+        el.classList.remove('slide-active', 'slide-above');
+        el.classList.add('slide-below');
       } else {
-        if (rect.bottom < 85) {
-          el.classList.remove('is-visible');
-          el.classList.add('is-scrolled-past');
-        } else if (rect.top > vh - 40) {
-          el.classList.remove('is-visible');
-          el.classList.remove('is-scrolled-past');
-        }
+        // Tepat di dalam layar (viewport): slide in & fade in
+        el.classList.remove('slide-below', 'slide-above');
+        el.classList.add('slide-active');
       }
     });
-  }, observerOptions);
+  }
 
-  fadeElements.forEach(elem => observer.observe(elem));
-
-  // 60fps Scroll position update
+  // 60fps Scroll tracking
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        updateScrollState(fadeElements);
+        updateSlidePositions();
         ticking = false;
       });
       ticking = true;
     }
   }, { passive: true });
 
-  updateScrollState(fadeElements);
-}
-
-function updateScrollState(elements) {
-  const vh = window.innerHeight;
-  const topThreshold = 85;
-
-  elements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < topThreshold && rect.bottom < topThreshold + 40) {
-      el.classList.remove('is-visible');
-      el.classList.add('is-scrolled-past');
-    } else if (rect.top < vh - 40 && rect.bottom > topThreshold) {
-      el.classList.add('is-visible');
-      el.classList.remove('is-scrolled-past');
-    } else if (rect.top >= vh - 40) {
-      el.classList.remove('is-visible');
-      el.classList.remove('is-scrolled-past');
-    }
-  });
+  // Initial update
+  updateSlidePositions();
 }
 
 /**

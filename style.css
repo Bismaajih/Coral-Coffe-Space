@@ -1,30 +1,36 @@
 /* =========================================================
-   Coral Coffee Space — Menu Digital & Visual Psychology
-   Theme: Vibrant Ocean Blue (#143054) & Hot Coral Pink (#E44B66)
+   Coral Coffee Space — Menu & Visual Catalog
+   Theme: Vibrant Ocean Blue & Hot Coral Pink
+   Features:
+   - Large Luscious Catalog Background Overlays (Non-remove-bg)
+   - Small Delicate Cutout Thumbnails Beside Menu Items (Remove-bg)
+   - Appetite-stimulating Jiggle/Shake on Tap & Scroll
+   - Smooth Viewport Fade-In / Fade-Out
    ========================================================= */
 
 :root {
   /* Colors */
-  --blue-ocean-deep: #10243E;
+  --blue-ocean-deep: #0E1E34;
   --blue-ocean-main: #143054;
-  --blue-ocean-muted: #486588;
+  --blue-ocean-card: #183760;
+  --blue-ocean-muted: #8AA4C4;
   --blue-ocean-light: #EBF2FA;
-  --blue-ocean-border: #D0DFEE;
+  --blue-ocean-border: rgba(208, 223, 238, 0.25);
 
   --coral-hot: #E44B66;
   --coral-accent: #F97087;
-  --coral-soft: #FDECEF;
-  --coral-border: #F7CAD2;
+  --coral-soft: rgba(228, 75, 102, 0.15);
+  --coral-border: rgba(249, 112, 135, 0.35);
 
-  --canvas-bg: #FAF8F5;
+  --canvas-bg: #F5F1EB;
   --card-bg: #FFFFFF;
   --border-light: #ECE5DE;
 
-  /* Fonts */
+  /* Typography */
   --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Frame */
+  /* Container */
   --max-width: 480px;
 }
 
@@ -39,12 +45,12 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: #E8E3DD;
+  background-color: #DFDAD3;
 }
 
 body {
   font-family: var(--font-body);
-  color: var(--blue-ocean-deep);
+  color: #FFFFFF;
   background-color: var(--canvas-bg);
   line-height: 1.5;
   overflow-x: hidden;
@@ -57,41 +63,60 @@ body {
   margin: 0 auto;
   min-height: 100vh;
   background-color: var(--canvas-bg);
-  box-shadow: 0 0 60px rgba(16, 36, 62, 0.12);
+  box-shadow: 0 0 60px rgba(14, 30, 52, 0.18);
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-bottom: 70px; /* Space for floating dock */
+  padding-bottom: 75px; /* Space for floating crave dock */
 }
 
 /* =========================================================
-   Hero Header (Warm Ocean & Coral Vibe)
+   Hero Header with Atmospheric Catalog Photo Overlay
    ========================================================= */
 .cafe-hero {
-  padding: 24px 20px 20px 20px;
-  background: linear-gradient(180deg, #143054 0%, #193B67 85%, var(--canvas-bg) 100%);
-  color: #FFFFFF;
-  text-align: center;
   position: relative;
-  border-bottom: 1px solid var(--border-light);
+  padding: 24px 20px 24px 20px;
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center 30%;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Scrim to ensure crisp text readability */
+.hero-backdrop-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, 
+    rgba(14, 30, 52, 0.82) 0%, 
+    rgba(18, 42, 74, 0.92) 75%, 
+    var(--canvas-bg) 100%);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .status-chip {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(8px);
   padding: 5px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .pulsing-dot {
@@ -112,6 +137,7 @@ body {
 .status-label {
   font-size: 0.72rem;
   font-weight: 600;
+  color: #FFFFFF;
   letter-spacing: 0.02em;
 }
 
@@ -126,7 +152,7 @@ body {
   background: var(--coral-hot);
   padding: 5px 12px;
   border-radius: 999px;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease;
   box-shadow: 0 4px 12px rgba(228, 75, 102, 0.35);
 }
 
@@ -141,17 +167,17 @@ body {
 
 /* Mascot Doodle Cup */
 .mascot-cup {
-  width: 68px;
-  height: 68px;
-  margin: 0 auto 10px auto;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 8px auto;
   cursor: pointer;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.3));
   animation: mascotWiggle 3.5s infinite ease-in-out;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .mascot-cup:active {
-  transform: scale(1.2) rotate(10deg);
+  transform: scale(1.2) rotate(8deg);
 }
 
 @keyframes mascotWiggle {
@@ -168,20 +194,20 @@ body {
 
 .brand-title {
   font-family: var(--font-display);
-  font-size: 1.7rem;
+  font-size: 1.65rem;
   font-weight: 900;
   letter-spacing: 0.04em;
   color: #FFFFFF;
   line-height: 1.15;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .brand-tagline {
-  font-size: 0.82rem;
+  font-size: 0.80rem;
   color: #D3E2F4;
   font-style: italic;
   margin-top: 4px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 /* Facility Row */
@@ -190,14 +216,14 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .facility-tag {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 0.70rem;
+  font-size: 0.68rem;
   font-weight: 500;
   color: #DDE8F7;
   background: rgba(255, 255, 255, 0.12);
@@ -207,8 +233,8 @@ body {
 }
 
 .facility-tag svg {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   color: var(--coral-accent);
 }
 
@@ -217,7 +243,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   font-weight: 600;
   color: var(--blue-ocean-deep);
   background: #FFFFFF;
@@ -238,11 +264,11 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(250, 248, 245, 0.94);
+  background-color: rgba(245, 241, 235, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: 10px 14px;
-  border-bottom: 1px solid rgba(236, 229, 222, 0.85);
+  border-bottom: 1px solid rgba(220, 212, 204, 0.8);
 }
 
 .category-scroll-track {
@@ -261,12 +287,12 @@ body {
   white-space: nowrap;
   padding: 7px 14px;
   border-radius: 999px;
-  font-size: 0.80rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  color: var(--blue-ocean-muted);
+  color: #556B85;
   text-decoration: none;
   background-color: #FFFFFF;
-  border: 1px solid var(--border-light);
+  border: 1px solid #E2D9D0;
   transition: all 0.25s cubic-bezier(0.2, 0.9, 0.3, 1);
   display: inline-flex;
   align-items: center;
@@ -277,284 +303,251 @@ body {
   background-color: var(--blue-ocean-main);
   color: #FFFFFF;
   border-color: var(--blue-ocean-main);
-  box-shadow: 0 4px 12px rgba(20, 48, 84, 0.2);
+  box-shadow: 0 4px 12px rgba(20, 48, 84, 0.25);
   transform: translateY(-1px);
 }
 
 /* =========================================================
-   Main Editorial Menu Layout
+   Main Catalog Flow: Atmospheric Overlay Cards
    ========================================================= */
 .menu-main {
-  padding: 16px 18px 24px 18px;
+  padding: 16px 14px 20px 14px;
   display: flex;
   flex-direction: column;
-  gap: 34px;
+  gap: 24px;
 }
 
-.menu-block {
-  padding-top: 10px;
+/* The Large Atmospheric Background Overlay Card (Non-remove-bg photo) */
+.menu-catalog-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(14, 30, 52, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: var(--blue-ocean-deep);
 }
 
-.editorial-card {
+/* Background image + dark luxury gradient overlay */
+.card-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: var(--catalog-overlay);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+  filter: saturate(1.15) brightness(0.85);
+  transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+/* Dark gradient scrim on top of the image */
+.menu-catalog-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, 
+    rgba(14, 30, 52, 0.86) 0%, 
+    rgba(18, 42, 74, 0.92) 55%, 
+    rgba(14, 30, 52, 0.96) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.menu-catalog-card:hover .card-bg-overlay {
+  transform: scale(1.06);
+  filter: saturate(1.25) brightness(0.9);
+}
+
+/* Content Container Inside Card */
+.card-inner-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px 16px 20px 16px;
+}
+
+/* Catalog Card Header */
+.catalog-header-block {
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 16px;
-}
-
-.layout-left {
-  flex-direction: row;
-}
-
-.layout-right {
-  flex-direction: row;
-}
-
-/* Visual Column */
-.card-visual {
-  flex: 0 0 38%;
-  max-width: 38%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.visual-interactive-wrap {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Product PNG Photo */
-.product-png-photo {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1.15;
-  object-fit: contain;
-  filter: drop-shadow(0 14px 18px rgba(16, 36, 62, 0.12));
-  transition: filter 0.3s ease;
-  animation: ambientFloat 4.5s ease-in-out infinite;
-  transform-origin: center bottom;
-}
-
-/* Organic Ambient Floating Freshness */
-@keyframes ambientFloat {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-6px) rotate(1deg);
-  }
-}
-
-/* =========================================================
-   Trik Psikologi: SHAKE / JIGGLE ANIMATION ("Sedikit Dishake")
-   ========================================================= */
-.shake-on-tap:hover {
-  filter: drop-shadow(0 18px 22px rgba(228, 75, 102, 0.25));
-}
-
-.shake-on-tap:active,
-.is-shaking {
-  animation: glassDeliciousJiggle 0.65s cubic-bezier(0.36, 0.07, 0.19, 0.97) both !important;
-}
-
-@keyframes glassDeliciousJiggle {
-  0% { transform: scale(1) rotate(0deg); }
-  15% { transform: scale(1.08) rotate(-5deg); }
-  30% { transform: scale(1.06) rotate(4deg); }
-  45% { transform: scale(1.04) rotate(-3deg); }
-  60% { transform: scale(1.02) rotate(2deg); }
-  75% { transform: scale(1.01) rotate(-1deg); }
-  100% { transform: scale(1) rotate(0deg); }
-}
-
-/* Tap to Shake Mini Badge */
-.tap-badge {
-  margin-top: 6px;
-  font-size: 0.62rem;
-  font-weight: 700;
-  color: var(--coral-hot);
-  background: var(--coral-soft);
-  border: 1px solid var(--coral-border);
-  padding: 3px 8px;
-  border-radius: 999px;
-  white-space: nowrap;
-  letter-spacing: 0.02em;
-  opacity: 0.85;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.visual-interactive-wrap:hover .tap-badge,
-.visual-interactive-wrap:active .tap-badge {
-  opacity: 1;
-  transform: scale(1.05);
-  background: var(--coral-hot);
-  color: #FFFFFF;
-}
-
-/* =========================================================
-   Scroll-Driven Appearance (Muncul & Menghilang Halus)
-   ========================================================= */
-.scroll-fade-elem {
-  opacity: 0;
-  transform: translateY(30px) scale(0.92);
-  filter: blur(4px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform, filter;
-}
-
-/* State 1: In Active Viewport */
-.scroll-fade-elem.is-visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0px);
-}
-
-/* State 2: Scrolled Past (Fade out to top) */
-.scroll-fade-elem.is-scrolled-past {
-  opacity: 0.18;
-  transform: translateY(-24px) scale(0.94);
-  filter: blur(2px);
-}
-
-/* =========================================================
-   Content & Tabular Pricing Column
-   ========================================================= */
-.card-details {
-  flex: 1;
-  min-width: 0;
-}
-
-.heading-group {
   margin-bottom: 4px;
 }
 
-.category-sub {
-  font-size: 0.68rem;
+.catalog-badge-sub {
+  font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--coral-hot);
+  color: #79B3E8;
   display: block;
   text-transform: uppercase;
 }
 
-.category-title {
+.text-pink-sub {
+  color: var(--coral-accent);
+}
+
+.catalog-title {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.30rem;
   font-weight: 900;
-  letter-spacing: 0.04em;
-  color: var(--blue-ocean-main);
-  line-height: 1.2;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  line-height: 1.15;
 }
 
-.divider-line {
-  width: 100%;
-  height: 2.5px;
-  border-radius: 2px;
-  margin-top: 4px;
+.catalog-ambient-tag {
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: #D3E2F4;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
 }
 
-.blue-line {
-  background: linear-gradient(90deg, var(--blue-ocean-main) 0%, rgba(20, 48, 84, 0.2) 100%);
-}
-
-.pink-line {
-  background: linear-gradient(90deg, var(--coral-hot) 0%, rgba(228, 75, 102, 0.2) 100%);
-}
-
-.category-notes {
-  font-size: 0.76rem;
+.catalog-desc {
+  font-size: 0.74rem;
   font-style: italic;
   color: var(--blue-ocean-muted);
   line-height: 1.35;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
-/* Item Table */
-.item-table {
+/* =========================================================
+   Menu Item Rows & Small Delicate Cutout Thumbnails (Remove-bg)
+   ========================================================= */
+.catalog-item-list {
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 
-.menu-row {
+.menu-item-row {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 6px 4px;
-  border-bottom: 1px dashed rgba(20, 48, 84, 0.08);
-  transition: background 0.2s ease, transform 0.15s ease;
-  border-radius: 4px;
+  align-items: center;
+  padding: 8px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.25s cubic-bezier(0.2, 0.9, 0.3, 1);
   cursor: pointer;
+  position: relative;
 }
 
-.menu-row:hover,
-.menu-row:active {
-  background-color: rgba(228, 75, 102, 0.05);
+.menu-item-row:hover,
+.menu-item-row:active {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateX(2px);
 }
 
-.menu-row:last-child {
-  border-bottom: none;
+.featured-row {
+  background: rgba(228, 75, 102, 0.08);
+  border-color: rgba(228, 75, 102, 0.20);
 }
 
-.row-left {
+/* Small Delicate Cutout Thumbnail (44px) */
+.item-thumb-box {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  position: relative;
+  user-select: none;
+}
+
+.thumb-cutout {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: center bottom;
+}
+
+/* Trik Psikologi: SHAKE / JIGGLE on Tap & Scroll */
+.thumb-cutout:hover,
+.thumb-cutout:active,
+.thumb-cutout.is-shaking {
+  animation: deliciousMicroShake 0.65s cubic-bezier(0.36, 0.07, 0.19, 0.97) both !important;
+}
+
+@keyframes deliciousMicroShake {
+  0% { transform: scale(1) rotate(0deg); }
+  20% { transform: scale(1.22) rotate(-8deg); filter: drop-shadow(0 8px 14px rgba(228, 75, 102, 0.45)); }
+  40% { transform: scale(1.18) rotate(7deg); }
+  60% { transform: scale(1.10) rotate(-4deg); }
+  80% { transform: scale(1.05) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Row Info Text */
+.item-info-box {
   flex: 1;
   min-width: 0;
-  padding-right: 8px;
 }
 
-.name-badge-wrap {
+.pl-thumb {
+  padding-left: 6px;
+}
+
+.item-name-wrap {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 6px;
 }
 
-.item-name {
+.item-title {
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--blue-ocean-deep);
-  line-height: 1.25;
+  color: #FFFFFF;
+  line-height: 1.2;
 }
 
-.sub-variant {
-  font-size: 0.72rem;
+.tag-variant {
+  font-size: 0.70rem;
   font-weight: 500;
   color: var(--blue-ocean-muted);
 }
 
-.item-desc {
+.item-sub {
   display: block;
-  font-size: 0.72rem;
-  color: var(--blue-ocean-muted);
-  line-height: 1.3;
+  font-size: 0.70rem;
+  color: #B4C7DD;
+  line-height: 1.25;
   margin-top: 2px;
 }
 
-.row-right {
-  display: flex;
-  align-items: center;
+/* Price Box */
+.item-price-box {
+  padding-left: 10px;
+  text-align: right;
+  flex-shrink: 0;
 }
 
-/* Psychology: Clean Naked Digits without 'Rp' or ',000' */
-.item-price {
+.price-val {
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--blue-ocean-main);
+  color: #FFFFFF;
   letter-spacing: -0.02em;
-  white-space: nowrap;
 }
 
-/* Social Proof & Psychology Badges */
-.badge-tag {
-  font-size: 0.60rem;
+.text-pink {
+  color: var(--coral-accent) !important;
+}
+
+.text-blue {
+  color: #7BB7F0 !important;
+}
+
+/* Badges */
+.badge-pill {
+  font-size: 0.58rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   padding: 2px 6px;
@@ -562,67 +555,86 @@ body {
   text-transform: uppercase;
 }
 
-.pink-badge {
+.pill-pink {
   background-color: var(--coral-soft);
-  color: var(--coral-hot);
+  color: var(--coral-accent);
   border: 1px solid var(--coral-border);
 }
 
-.blue-badge {
-  background-color: var(--blue-ocean-light);
-  color: var(--blue-ocean-main);
-  border: 1px solid var(--blue-ocean-border);
+.pill-blue {
+  background-color: rgba(121, 179, 232, 0.15);
+  color: #79B3E8;
+  border: 1px solid rgba(121, 179, 232, 0.35);
 }
 
-/* Highlighted Item Row Accent */
-.highlighted-item .item-name {
-  color: var(--blue-ocean-main);
-}
-
-.highlighted-item .item-price {
-  color: var(--coral-hot);
-}
-
-/* Additional Addons Box */
-.additional-box {
+/* Addon Chip Box */
+.catalog-addon-box {
   margin-top: 14px;
-  background-color: #FFFFFF;
-  border: 1px dashed var(--blue-ocean-border);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
   padding: 10px 12px;
 }
 
-.add-title {
-  font-size: 0.70rem;
+.addon-title {
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.05em;
-  color: var(--blue-ocean-muted);
+  color: #8AA4C4;
   margin-bottom: 6px;
+  display: block;
 }
 
-.add-items {
+.addon-chip-group {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
 
-.add-pill {
-  font-size: 0.72rem;
-  background-color: var(--blue-ocean-light);
-  color: var(--blue-ocean-main);
+.addon-chip {
+  font-size: 0.70rem;
+  background: rgba(255, 255, 255, 0.10);
+  color: #FFFFFF;
   padding: 3px 8px;
   border-radius: 6px;
 }
 
-.add-pill strong {
+.addon-chip strong {
   font-family: var(--font-display);
   font-weight: 800;
-  color: var(--coral-hot);
+  color: var(--coral-accent);
   margin-left: 3px;
 }
 
 /* =========================================================
-   Floating Crave Dock (Psychology Social Proof)
+   Scroll-Driven Appearance for Cards (Fade-In & Fade-Out)
+   ========================================================= */
+.scroll-fade-card {
+  opacity: 0;
+  transform: translateY(28px) scale(0.96);
+  filter: blur(3px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+/* In active reading zone */
+.scroll-fade-card.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0px);
+}
+
+/* Scrolled past viewport top */
+.scroll-fade-card.is-scrolled-past {
+  opacity: 0.35;
+  transform: translateY(-20px) scale(0.97);
+  filter: blur(2px);
+}
+
+/* =========================================================
+   Floating Crave Dock (Social Proof)
    ========================================================= */
 .floating-crave-dock {
   position: fixed;
@@ -635,13 +647,13 @@ body {
 }
 
 .dock-inner {
-  background: rgba(16, 36, 62, 0.94);
+  background: rgba(14, 30, 52, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  padding: 10px 16px;
+  padding: 9px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -657,7 +669,7 @@ body {
   padding: 7px 16px;
   border-radius: 999px;
   font-family: var(--font-display);
-  font-size: 0.80rem;
+  font-size: 0.78rem;
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(228, 75, 102, 0.4);
@@ -669,13 +681,12 @@ body {
 }
 
 .crave-counter {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: #FFFFFF;
   letter-spacing: 0.01em;
 }
 
-/* Particle / Heart Burst on Click */
 .crave-particle {
   position: fixed;
   pointer-events: none;
@@ -693,7 +704,7 @@ body {
    Footer
    ========================================================= */
 .cafe-footer {
-  margin-top: 10px;
+  margin-top: 14px;
   padding: 24px 20px 20px 20px;
   text-align: center;
 }
@@ -701,19 +712,15 @@ body {
 .footer-divider {
   width: 100%;
   height: 1px;
-  background-color: var(--border-light);
+  background-color: #D8D0C7;
   margin-bottom: 16px;
 }
 
 .footer-note {
   font-size: 0.72rem;
-  color: var(--blue-ocean-muted);
+  color: #6C7E92;
   line-height: 1.5;
   margin-bottom: 12px;
-}
-
-.footer-social {
-  margin-bottom: 10px;
 }
 
 .social-link {
@@ -732,8 +739,9 @@ body {
 }
 
 .footer-copy {
-  font-size: 0.70rem;
-  color: #8C9CAE;
+  font-size: 0.68rem;
+  color: #929FA8;
+  margin-top: 6px;
 }
 
 /* Small screen optimization */
@@ -741,13 +749,18 @@ body {
   .brand-title {
     font-size: 1.45rem;
   }
-  .card-visual {
-    flex: 0 0 35%;
+  .catalog-title {
+    font-size: 1.15rem;
   }
-  .item-name {
+  .item-thumb-box {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+  }
+  .item-title {
     font-size: 0.82rem;
   }
-  .item-price {
+  .price-val {
     font-size: 1.02rem;
   }
 }

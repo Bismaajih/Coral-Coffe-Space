@@ -1,15 +1,15 @@
 /**
- * Coral Coffee Space — Interaction & Visual Psychology Script
+ * Coral Coffee Space — Menu & Catalog Interactions
  * Features:
- * 1. Image Shake / Jiggle on tap & scroll entrance (Appetite stimulation)
- * 2. Smooth Scroll Fade-In & Fade-Out (Focus retention)
- * 3. Synthetic Audio Feedback (Zero-dependency Web Audio API)
- * 4. Floating Crave Counter & Heart Bursts
+ * 1. Image Shake / Jiggle on item tap & scroll entrance
+ * 2. Smooth Scroll Fade-In & Fade-Out for Catalog Cards
+ * 3. Synthetic Audio Feedback (Web Audio API)
+ * 4. Floating Crave Counter & Reaction Burst
  * 5. Sticky Category Nav Sync
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initImageShakeInteraction();
+  initItemThumbnailShake();
   initScrollFadeEffects();
   initCategoryNavSync();
   initCraveMeter();
@@ -17,25 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * 1. Image Shake / Jiggle on Tap & Scroll Entrance
+ * 1. Small Cutout Thumbnail Shake on Tap / Click
  */
-function initImageShakeInteraction() {
-  const shakeContainers = document.querySelectorAll('.visual-interactive-wrap');
+function initItemThumbnailShake() {
+  const itemRows = document.querySelectorAll('.menu-item-row');
 
-  shakeContainers.forEach(container => {
-    const img = container.querySelector('.product-png-photo');
-    if (!img) return;
+  itemRows.forEach(row => {
+    const thumb = row.querySelector('.thumb-cutout');
 
-    // Trigger on Click / Tap
-    container.addEventListener('click', () => {
-      triggerDeliciousShake(img);
+    row.addEventListener('click', () => {
+      if (thumb) {
+        triggerDeliciousShake(thumb);
+      }
       playBubblePopSound();
-      spawnMiniReaction(container, '✨');
     });
 
-    // Touch feedback
-    container.addEventListener('touchstart', () => {
-      triggerDeliciousShake(img);
+    row.addEventListener('touchstart', () => {
+      if (thumb) {
+        triggerDeliciousShake(thumb);
+      }
       playBubblePopSound();
     }, { passive: true });
   });
@@ -44,8 +44,7 @@ function initImageShakeInteraction() {
 function triggerDeliciousShake(img) {
   if (!img) return;
   img.classList.remove('is-shaking');
-  // Trigger reflow to restart CSS animation
-  void img.offsetWidth;
+  void img.offsetWidth; // Force reflow
   img.classList.add('is-shaking');
 
   setTimeout(() => {
@@ -54,92 +53,92 @@ function triggerDeliciousShake(img) {
 }
 
 /**
- * 2. Scroll-Driven Fade In & Fade Out for Product Images
+ * 2. Scroll-Driven Fade-In & Fade-Out for Catalog Cards
  */
 function initScrollFadeEffects() {
-  const fadeElements = document.querySelectorAll('.scroll-fade-elem');
-  if (!fadeElements.length) return;
+  const cards = document.querySelectorAll('.scroll-fade-card');
+  if (!cards.length) return;
 
   const observerOptions = {
     root: null,
     rootMargin: '-5% 0px -10% 0px',
-    threshold: [0, 0.2, 0.6, 1.0]
+    threshold: [0, 0.15, 0.5, 0.9]
   };
 
-  const hasShakenOnce = new WeakSet();
+  const hasEnteredOnce = new WeakSet();
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      const el = entry.target;
-      const rect = entry.boundingClientRect;
+      const card = entry.target;
+      const rect = card.getBoundingClientRect();
       const vh = window.innerHeight;
 
       if (entry.isIntersecting) {
-        el.classList.add('is-visible');
-        el.classList.remove('is-scrolled-past');
+        card.classList.add('is-visible');
+        card.classList.remove('is-scrolled-past');
 
-        // Psychology trick: trigger a playful entrance wobble once when entering view!
-        if (!hasShakenOnce.has(el)) {
-          hasShakenOnce.add(el);
-          const img = el.querySelector('.product-png-photo');
-          if (img) {
+        // Playful subtle shake on first featured thumbnail in this card
+        if (!hasEnteredOnce.has(card)) {
+          hasEnteredOnce.add(card);
+          const firstThumb = card.querySelector('.thumb-cutout');
+          if (firstThumb) {
             setTimeout(() => {
-              triggerDeliciousShake(img);
-            }, 250);
+              triggerDeliciousShake(firstThumb);
+            }, 300);
           }
         }
       } else {
         if (rect.bottom < 85) {
-          // Lewat ke atas layar -> fade out lembut
-          el.classList.remove('is-visible');
-          el.classList.add('is-scrolled-past');
+          // Passed top viewport -> softly dim
+          card.classList.remove('is-visible');
+          card.classList.add('is-scrolled-past');
         } else if (rect.top > vh - 40) {
-          // Di bawah layar -> sembunyikan siap masuk
-          el.classList.remove('is-visible');
-          el.classList.remove('is-scrolled-past');
+          // Below viewport -> prepare to rise
+          card.classList.remove('is-visible');
+          card.classList.remove('is-scrolled-past');
         }
       }
     });
   }, observerOptions);
 
-  fadeElements.forEach(elem => observer.observe(elem));
+  cards.forEach(card => observer.observe(card));
 
-  // Fallback 60fps scroll listener
+  // 60fps Scroll position update
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        updateScrollPositions(fadeElements);
+        updateCardScrollState(cards);
         ticking = false;
       });
       ticking = true;
     }
   }, { passive: true });
 
-  updateScrollPositions(fadeElements);
+  updateCardScrollState(cards);
 }
 
-function updateScrollPositions(elements) {
+function updateCardScrollState(cards) {
   const vh = window.innerHeight;
   const topThreshold = 85;
 
-  elements.forEach(el => {
-    const rect = el.getBoundingClientRect();
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
     if (rect.top < topThreshold && rect.bottom < topThreshold + 40) {
-      el.classList.remove('is-visible');
-      el.classList.add('is-scrolled-past');
+      card.classList.remove('is-visible');
+      card.classList.add('is-scrolled-past');
     } else if (rect.top < vh - 40 && rect.bottom > topThreshold) {
-      el.classList.add('is-visible');
-      el.classList.remove('is-scrolled-past');
+      card.classList.add('is-visible');
+      card.classList.remove('is-scrolled-past');
     } else if (rect.top >= vh - 40) {
-      el.classList.remove('is-visible');
-      el.classList.remove('is-scrolled-past');
+      card.classList.remove('is-visible');
+      card.classList.remove('is-scrolled-past');
     }
   });
 }
 
 /**
- * 3. Zero-Dependency Web Audio Synthesizer (Ice clink / Bubble pop)
+ * 3. Zero-Dependency Web Audio Synthesizer (Ice clink / Pop sound)
  */
 let audioCtx = null;
 
@@ -165,21 +164,20 @@ function playBubblePopSound() {
     const gain = ctx.createGain();
 
     osc.type = 'sine';
-    // Frequency slide for a cute ice pop / bubble sound
     const now = ctx.currentTime;
-    osc.frequency.setValueAtTime(540, now);
-    osc.frequency.exponentialRampToValueAtTime(880, now + 0.08);
+    osc.frequency.setValueAtTime(560, now);
+    osc.frequency.exponentialRampToValueAtTime(920, now + 0.07);
 
     gain.gain.setValueAtTime(0.12, now);
-    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
 
     osc.connect(gain);
     gain.connect(ctx.destination);
 
     osc.start(now);
-    osc.stop(now + 0.1);
+    osc.stop(now + 0.09);
   } catch (err) {
-    // Audio optional, silently ignore if blocked by browser policy
+    // Audio optional, ignore if browser policy limits auto sound
   }
 }
 
@@ -188,7 +186,7 @@ function playBubblePopSound() {
  */
 function initCategoryNavSync() {
   const pills = document.querySelectorAll('.cat-pill');
-  const sections = document.querySelectorAll('.menu-block');
+  const sections = document.querySelectorAll('.menu-catalog-card');
   const track = document.getElementById('categoryTrack');
 
   pills.forEach(pill => {
@@ -199,7 +197,7 @@ function initCategoryNavSync() {
 
       if (targetSec) {
         const navHeight = document.getElementById('categoryNav').offsetHeight || 55;
-        const targetTop = targetSec.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+        const targetTop = targetSec.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
 
         window.scrollTo({
           top: targetTop,
@@ -220,7 +218,7 @@ function initCategoryNavSync() {
 
     sections.forEach(sec => {
       const rect = sec.getBoundingClientRect();
-      if (rect.top <= navHeight + 90 && rect.bottom >= navHeight) {
+      if (rect.top <= navHeight + 110 && rect.bottom >= navHeight) {
         currentId = sec.getAttribute('id');
       }
     });
@@ -252,7 +250,7 @@ function centerPill(pill, track) {
 }
 
 /**
- * 5. Floating Crave Counter & Reaction Burst (Psychological Social Proof)
+ * 5. Floating Crave Counter & Reaction Burst
  */
 function initCraveMeter() {
   const craveBtn = document.getElementById('craveBtn');
@@ -260,14 +258,13 @@ function initCraveMeter() {
   if (!craveBtn || !craveCount) return;
 
   let count = 142;
-  const emojis = ['❤️', '🔥', '☕', '✨', '😋', '🥤'];
+  const emojis = ['❤️', '🔥', '☕', '✨', '😋', '🥤', '🍜'];
 
-  craveBtn.addEventListener('click', (e) => {
+  craveBtn.addEventListener('click', () => {
     count++;
     craveCount.textContent = `${count} orang ngiler hari ini 🔥`;
     playBubblePopSound();
 
-    // Spawn floating particle
     const rect = craveBtn.getBoundingClientRect();
     const particle = document.createElement('div');
     particle.className = 'crave-particle';
@@ -283,20 +280,6 @@ function initCraveMeter() {
   });
 }
 
-function spawnMiniReaction(container, emoji) {
-  const particle = document.createElement('div');
-  particle.className = 'crave-particle';
-  particle.textContent = emoji;
-  const rect = container.getBoundingClientRect();
-  particle.style.left = `${rect.left + rect.width / 2}px`;
-  particle.style.top = `${rect.top + rect.height / 3}px`;
-  document.body.appendChild(particle);
-
-  setTimeout(() => {
-    particle.remove();
-  }, 850);
-}
-
 /**
  * 6. Mascot Fun Interaction
  */
@@ -306,6 +289,5 @@ function initMascotFun() {
 
   mascot.addEventListener('click', () => {
     playBubblePopSound();
-    spawnMiniReaction(mascot, '☕');
   });
 }

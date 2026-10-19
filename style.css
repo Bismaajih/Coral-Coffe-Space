@@ -618,63 +618,69 @@ body {
   border: 1px solid var(--coral-blue-border);
 }
 
-/* Additional & Extra Box (Lebar Penuh Kanan-Kiri) */
+/* Additional Box (Ultra Compact Micro Strip - Slender & Elevated) */
 .additional-box {
-  margin-top: 18px;
+  margin-top: -3px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--coral-blue-border);
-  border-radius: 14px;
-  padding: 12px 14px;
-  box-shadow: 0 4px 14px rgba(18, 108, 252, 0.05);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(18, 108, 252, 0.15);
+  border-radius: 6px;
+  padding: 2.5px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
   position: relative;
   z-index: 2;
+  box-shadow: 0 1px 3px rgba(18, 108, 252, 0.02);
 }
 
 .add-label {
-  font-size: 0.70rem;
+  font-size: 0.52rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   color: var(--coral-electric-blue);
-  margin-bottom: 9px;
-  display: flex;
+  margin-bottom: 0;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 3px;
   text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .add-label::before {
   content: "";
   display: inline-block;
-  width: 5px;
-  height: 5px;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
   background-color: var(--coral-bubble-pink);
 }
 
 .add-pill-group {
   display: flex;
+  align-items: center;
+  gap: 3px;
   flex-wrap: wrap;
-  gap: 8px;
+  justify-content: flex-end;
 }
 
 .add-chip {
-  flex: 1 1 calc(33.333% - 8px);
-  min-width: 95px;
-  font-size: 0.74rem;
+  font-size: 0.54rem;
   font-weight: 600;
   background: #FFFFFF;
   color: var(--text-main);
-  padding: 5px 10px;
+  padding: 1.5px 5px;
   border-radius: 999px;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(220, 230, 245, 0.85);
   display: inline-flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  gap: 3px;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
 .add-chip strong {
@@ -682,9 +688,33 @@ body {
   font-weight: 800;
   color: var(--coral-electric-blue);
   background: var(--coral-blue-soft);
-  padding: 1px 6px;
+  padding: 0 3px;
   border-radius: 999px;
-  font-size: 0.70rem;
+  font-size: 0.52rem;
+}
+
+/* Playful Brand Catchphrase Banners (From Official Posters) */
+.coral-catchphrase-banner {
+  text-align: center;
+  padding: 8px 12px;
+  margin: 10px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.coral-catchphrase-banner .catchphrase-text {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: -0.01em;
+  color: var(--coral-bubble-pink);
+  text-shadow: 1px 1px 0 rgba(18, 108, 252, 0.35);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px dashed rgba(252, 102, 162, 0.5);
 }
 
 /* =========================================================
